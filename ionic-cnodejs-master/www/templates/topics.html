@@ -1,0 +1,42 @@
+<ion-view title="Node.js专业中文社区">
+
+	<ion-nav-buttons side="left">
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">
+		<button class="button button-icon icon ion-refresh" ng-click="refresh()"></button>
+	</ion-nav-buttons>
+
+	<ion-content>
+
+		<div class="button-bar bar-balanced bar-sm">
+			<a class="button" ng-class="tab=='all' ? 'active' : null" ng-click="changeTab('all')">全部</a>
+			<a class="button" ng-class="tab=='share' ? 'active' : null" ng-click="changeTab('share')">分享</a>
+			<a class="button" ng-class="tab=='ask' ? 'active' : null" ng-click="changeTab('ask')">问答</a>
+			<a class="button" ng-class="tab=='job' ? 'active' : null" ng-click="changeTab('job')">招聘</a>
+		</div>
+
+		<progress ng-if="loading"></progress>
+
+		<div class="list list-topics">
+			<!--<a class="item item-avatar" bindonce bo-href="'#/app/topic/' + topic.id" ng-repeat="topic in topics track by $index">-->
+				<!--<img bo-src="topic.author.avatar_url | avatar" onerror="this.src='img/avatar.png'"/>-->
+				<!--<h2 bo-bind="topic.title"></h2>-->
+				<!--<p>-->
+					<!--<span class="tab" bo-bind="topic.tab | TabFilter:topic.top"></span>-->
+					<!--<em bo-bind="topic.last_reply_at | fromNow"></em>-->
+				<!--</p>-->
+			<!--</a>-->
+			<a class="item item-avatar" ng-repeat="topic in topics track by $index" href="#/app/topic/{{ topic.id }}">
+				<img ng-src="{{ topic.author.avatar_url | avatar }}" onerror="this.src='img/avatar.png'"/>
+				<h2 ng-bind="topic.title"></h2>
+				<p>
+					<span class="tab" ng-bind="topic.tab | TabFilter:topic.top"></span>
+					<em ng-bind="topic.last_reply_at | fromNow"></em>
+				</p>
+			</a>
+		</div>
+
+	</ion-content>
+
+</ion-view>

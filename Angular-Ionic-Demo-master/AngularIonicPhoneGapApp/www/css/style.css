@@ -1,0 +1,19 @@
+/* Empty. Add your own CSS if you like */
+
+.itemSpacing {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.loginMsg {
+    color : red;
+}
+
+.inputCross {
+    float: right;
+}
+
+.listTopMargin {
+    margin-top: 40px;
+}
+

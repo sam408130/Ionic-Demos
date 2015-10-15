@@ -1,0 +1,235 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import 'www/lib/ionic/scss/ionic';
+
+.calendarHeader{
+  padding: 10px 0; 
+  text-align: center;
+    & .month-name {
+        font-size: 20px;  
+        text-align: center;
+        color: #000;
+        margin-left:10px;
+        margin-right:15px;
+        display:inline-block;
+        width:30%;
+        height:50px;
+        vertical-align: middle;
+        white-space: pre-line;
+        line-height:25px;
+    }
+    & .btn-group {
+        margin-bottom: 10px;
+        width:100%;
+    }
+}
+[class*="cal-span"] {
+    float: left;
+    margin-left: 0;
+    min-height: 1px;
+}
+.cal-row-fluid {
+  width: 100%;
+  *zoom: 1;
+    &:before, &:after {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+    & [class*="cal-span"] {
+    display: block;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin-left: 0%;
+    *margin-left: -0.05213764337851929%;
+    }
+    & [class*="cal-span"]:first-child {
+        margin-left: 0;
+    }
+    & .cal-span1 {
+    width: 14.285714285714285%;
+    *width: 14.233576642335766%;
+        
+    }
+
+}
+
+.cal-row-head {
+    & [class*="cal-span"]:first-child,
+    & [class*="cal-span"] {
+        min-height: auto;
+        font-weight: bolder;
+        text-align: center;
+        border: 1px solid #e1e1e1;
+        padding: 5px 0;
+        background-color: $faceblue;
+        color:$light;
+    & [class*="cal-span"] small {
+    font-weight: normal;
+        
+        }
+    }
+}
+.cal-events-num {
+  margin-top: 20px;
+}
+.cal-month-day {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 75px;
+    text-align:center;
+    & #content{
+      height: 100%;
+      padding: 35px 10px 5px 10px;
+      text-align: center;
+      color: #111;  
+    }
+}
+.cal-month-box {
+  border: 1px solid #e1e1e1;
+  border-radius: 2px;
+  background: #fff;
+    
+    & [class*="cal-span"] {
+        min-height: 75px;
+        border-right: 1px solid #e1e1e1;
+    }
+    & .cal-row-fluid [class*="cal-span"]:last-child {
+        border-right: 0px;
+    }
+    & .cal-row-fluid {
+        border-bottom: 1px solid #e1e1e1;
+    }
+    & .cal-row-fluid:last-child {
+        border-bottom: 0px;
+    }
+    & .cal-day-today span[data-cal-date] {
+        font-size: 2.2em;
+        padding-left:4px;
+    }
+}
+span[data-cal-date] {
+    display:block;
+    float:right;
+  font-size: 1.2em;
+  font-weight: normal;
+  opacity: 1.5;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+    display:inline-block;
+    padding-top:10px;
+    padding-right:10px;
+    font-size:20px;
+  
+}
+.cal-day-outmonth{
+  background: #f0f0f0;
+    & span[data-cal-date] {
+      opacity: 0.3;
+      cursor: default;
+        padding-top:10px;
+        font-size:20px;
+    }
+}
+.cal-day-weekend span[data-cal-date] {
+  color: $assertive;
+    padding-top:10px;
+    font-size:20px;
+    
+}
+.cal-day-today {
+  background-color: #e8fde7;
+    & span[data-cal-date] {
+      color: darkgreen;
+        padding-top:10px;
+        
+    }
+}
+.cal-day-holiday span[data-cal-date] {
+  color: #800080;
+    padding-left:5px;
+}
+.bar-positive {
+    padding-top:10px;
+    display:block;
+    text-align:center;
+    font-size:1.5em;
+}
+.event-container {
+    border:1px solid #fff;
+    font-size:1.2em;
+    & .event-date {
+        text-align: center;
+        display:block;
+    }
+    & .event-description {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        text-align: center;
+        display:block;
+        color:green;
+    }
+    & .event-title {
+        padding-bottom: 5px;
+        font-size: 1.2em;
+        text-align: center;
+         display:block;
+    }
+    & .ion-heart {
+        float:left;
+    }
+    & .ion-alert {
+
+        float:left;
+    }
+}
+.icon-container {
+
+    display:block;
+    padding-left:8px;
+    float:left;
+    
+}
+.bar-header {
+    background-color:$faceblue;
+    & h1 {
+        color:#fff;
+    }
+}
+.button.button-dark {
+    background-color:$faceblue;
+    margin-top:27px;
+}
+.bar.bar-stable .title {
+    font-size:25px;
+}

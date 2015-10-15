@@ -1,0 +1,59 @@
+/* Empty. Add your own CSS if you like */
+/* 覆盖action-sheet*/
+
+.platform-android .action-sheet-backdrop.active {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.platform-android .action-sheet {
+	margin-left: 8px;
+	margin-right: 8px;
+	width: auto;
+	z-index: 11;
+	overflow: hidden;
+}
+.platform-android .action-sheet .action-sheet-title,
+.platform-android .action-sheet .button {
+	display: block;
+	padding: 1px;
+	width: 100%;
+	border-radius: 0;
+	border-color: #d1d3d6;
+	background-color: transparent;
+	color: #007aff;
+	font-size: 21px;
+	text-align: center;
+}
+.platform-android .action-sheet .action-sheet-title {
+	padding: 16px;
+	color: #8f8f8f;
+	text-align: center;
+	font-size: 13px;
+}
+.platform-android .action-sheet .button.active,
+.platform-android .action-sheet .button.activated {
+	background: #e8e8e8;
+}
+.platform-android .action-sheet-group {
+	margin-bottom: 8px;
+	border-radius: 4px;
+	background-color: #fff;
+	overflow: hidden;
+}
+.platform-android .action-sheet-group .button {
+	border-width: 1px 0 0;
+}
+.platform-android .action-sheet .button {
+	display: block;
+	padding: 1px;
+	width: 100%;
+	border-radius: 0;
+	border-color: #d1d3d6;
+	background-color: transparent;
+	color: #007aff;
+	font-size: 21px;
+}
+.platform-android .action-sheet-cancel {
+	font-weight: 500;
+	display: block;
+}
+.platform-android .action-sheet-has-icons .button {}

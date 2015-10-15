@@ -1,0 +1,36 @@
+<html ng-app="calendar">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js range calendar test</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/moment+langs.min.js"></script>
+    <script type="text/javascript" src="js/jquery.rangecalendar.js"></script>
+    
+    <link rel="stylesheet" id="rangecalendar-style-css" href="css/rangecalendar.css" type="text/css" media="all">
+    <link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.css" type="text/css" media="all">
+
+
+    <script>    
+      function test(target,range){
+        console.log(range);
+      }
+
+
+      calendar = angular.module('calendar', []);
+      calendar.directive('dateSelect', function() {
+          return {
+              restrict: 'A',
+              link: function(scope, ele, attrs){
+                $(ele).rangeCalendar(scope.$eval(attrs.dateSelect));
+              }
+          };
+      });
+    </script>
+  </head>
+  <body>
+      <div date-select="{theme:'orange-light-theme', changeRangeCallback: test}"></div>
+  </body>
+</html>

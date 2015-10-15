@@ -1,0 +1,132 @@
+hr {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+img {
+  max-width: 100%;
+  white-space: pre-wrap;
+}
+
+.item-author {
+  line-height: 20px;
+  text-decoration: none;
+  .avatar {
+    border-radius: 4px;
+    height: 16px;
+    width: 16px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 2px;
+  }
+}
+.item-topic {
+  .item-content {
+    img {
+      border-radius: 4px !important;
+    }
+    padding-right: 16px !important;
+  }
+}
+.label {
+  border-radius: 3px;
+  padding: 1px 3px;
+  font-size: 12px;
+  color: white;
+  margin-right: 2px;
+  &.label-positive {
+    background-color: $button-positive-active-bg;
+    color: white;
+  }
+  &.label-default {
+    background: #e5e5e5;
+    color: #999;
+  }
+}
+.text-note {
+  color: #aaa;
+}
+textarea {
+  resize: none !important;
+  width: 100%;
+  font-size: 16px !important;
+  line-height: 1.4;
+  min-height: 50px;
+}
+.markdown-text {
+  margin: 8px 0;
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6em;
+  ol, ul {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: #444;
+  }
+  p {
+    color: #444;
+    white-space: pre-wrap;
+  }
+}
+.reply-item {
+  .avatar {
+    height: 22px;
+    width: 22px;
+  }
+  .reply-content {
+    padding-left: 28px;
+  }
+}
+.message-item {
+  .avatar {
+    height: 22px;
+    width: 22px;
+  }
+  p {
+    padding-left: 28px;
+    margin-top: 5px;
+  }
+}
+.user-item-body {
+  p {
+    margin-top: 0;
+  }
+  .button-icon {
+    min-height: 0;
+    height: 35px;
+    line-height: 1;
+    padding: 0;
+    &:before {
+      font-size: 21px!important;
+      line-height: 13px;
+    }
+  }
+}
+.unread-message-dot {
+  &:before {
+    content: ' ';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #FD4638;
+    border-radius: 50%;
+    top: 3px;
+    right: 10px;
+    box-shadow: 1px 1px 1px gray;
+  }
+}
+.menu-dark {
+  background: #444;
+  .item {
+    color: #f8f8f8;
+    border: 1px solid #3a3a3a;
+    background: #444;
+    &.active {
+      background: #555;
+    }
+  }
+  .item-divider {
+    background: #444;
+  }
+}

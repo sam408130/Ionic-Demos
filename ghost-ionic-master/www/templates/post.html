@@ -1,0 +1,21 @@
+<ion-view view-title="文章">
+  <ion-content>
+    <div class="loading-fullscreen" ng-show="!post">
+      <ion-spinner icon="ripple-positive"></ion-spinner>
+    </div>
+    <div class="post" ng-show="post">
+      <div class="item-body">
+        <div class="cover" ng-if="post.image" ng-style="{'background-image':'url({{post.image}})'}"></div>
+        <h1>{{post.title}}</h1>
+        <div class="row">
+          <div class="col"><span><i class="ion-person"></i></span>&nbsp;<span ng-bind="post.author.name"></span></div>
+          <div class="col"><span><i class="ion-android-time"></i></span>&nbsp;<span>{{post.updated_at |date:'yyyy-MM-dd'}}</span></div>
+        </div>
+        <div class="row">
+          <div class="col"><span><i class="ion-ios-pricetags"></i></span>&nbsp;<span ng-repeat="tag in post.tags"><span ng-if="$index!==0">,</span>{{tag.name}}</span></div>
+        </div>
+      </div>
+      <div ng-bind-html="post.html" class="ghost-post"></div>
+    </div>
+  </ion-content>
+</ion-view>

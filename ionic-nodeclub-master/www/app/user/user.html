@@ -1,0 +1,81 @@
+<ion-view view-title="{{$stateParams.loginname}}">
+  <ion-nav-buttons side="right">
+    <button ng-click="auth.logout()"
+            ng-if="me.loginname==user.loginname"
+            class="button button-clear">
+      注销
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <!-- 提示信息 -->
+    <div class="text-center padding"
+         ng-if="!user">
+      <ion-spinner></ion-spinner>
+      <p>加载中...</p>
+    </div>
+
+    <!-- user 基本信息 -->
+    <div class="item item-avatar"
+         ng-if="user">
+      <img ng-if="user.avatar_url"
+           alt="{{::user.loginname}}"
+           src="{{::user.avatar_url | prefixUrl}}">
+      <h2>{{::user.loginname}}</h2>
+      <p>{{::user.score}}积分</p>
+    </div>
+    <div class="item item-body user-item-body" ng-if="user">
+      <div ng-if="me.loginname==user.loginname">
+        <a ui-sref="app.messages"
+           ng-if="msg.getUnreadCount() > 0"
+           class="button button-icon icon assertive ion-email-unread">
+          {{msg.getUnreadCount()}}个未读消息
+        </a>
+        <a ui-sref="app.messages"
+           ng-if="msg.getUnreadCount() == 0"
+           class="button button-icon icon ion-email">
+          我的消息
+        </a>
+      </div>
+      <a external-link="https://github.com/{{::user.githubUsername}}"
+         ng-if="user.githubUsername"
+         class="button button-icon icon ion-social-github">
+        @{{::user.githubUsername}}
+      </a>
+      <p class="subdued">
+        注册时间：<span am-time-ago="::user.create_at"></span>
+      </p>
+    </div>
+
+    <!-- user tabs -->
+    <div class="item item-divider tabs tabs-secondary tabs-icon-left"
+         ng-if="user">
+      <a class="tab-item"
+         ng-if="isCollectVisible()"
+         href
+         ng-class="{'active positive':displayTopics=='collect_topics'}"
+         ng-click="changeType('collect_topics')">
+        <i class="icon ion-star"></i>
+        {{::user.collect_topics.length}}话题收藏
+      </a>
+      <a class="tab-item"
+         href
+         ng-class="{'active positive':displayTopics=='recent_topics'}"
+         ng-click="changeType('recent_topics')">
+        <i class="icon ion-chatbox"></i>
+        最近创建
+      </a>
+      <a class="tab-item"
+         href
+         ng-class="{'active positive':displayTopics=='recent_replies'}"
+         ng-click="changeType('recent_replies')">
+        <i class="icon ion-chatboxes"></i>
+        最近参与
+      </a>
+    </div>
+
+    <!-- user topics 列表 -->
+    <topics-list topics="user[displayTopics]"></topics-list>
+
+  </ion-content>
+</ion-view>

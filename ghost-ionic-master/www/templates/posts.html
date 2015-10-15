@@ -1,0 +1,40 @@
+<ion-view view-title="{{blog.settings.title}}">
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="list posts" ng-if="user.password">
+      <div class="item-body" ng-if="!filter">
+        <div class="cover" ng-style="{'background-image':'url({{blog.settings.cover}})'}" ng-if="blog.settings.cover">
+          <h1 ng-bind="blog.settings.description"></h1>
+        </div>
+        <div class="no-cover" ng-if="!blog.settings.cover">
+          <h1 ng-bind="blog.settings.description"></h1>
+        </div>
+        <div class="row info">
+          <div class="col"><span>文章</span></br><span ng-bind="blog.posts.length"></span></div>
+          <div class="col"><span>标签</span></br><span ng-bind="blog.tags.length"></span></div>
+          <div class="col"><span>作者</span></br><span ng-bind="blog.users.length"></span></div>
+        </div>
+      </div>
+      <div class="padding" ng-if="filter">
+        <h2 ng-if="filter.type === 'tag'">标签：{{filter.name}}</h2>
+        <h2 ng-if="filter.type === 'user'">作者：{{filter.name}}</h2>
+      </div>
+      <a class="item item-thumbnail-left" ng-repeat="post in blog.posts" href="#/app/posts/{{post.id}}">
+        <img ng-src="{{post.image}}" ng-if="post.image">
+        <div class="no-cover" ng-if="!post.image">无封面</div>
+        <h2>{{post.title}}</h2>
+        <p>
+          <i class="ion-person"></i>
+          <span>{{post.author.name}}</span>
+          &nbsp;&nbsp;
+          <i class="ion-android-time"></i>
+          <span>{{post.updated_at |date:'yyyy-MM-dd'}}</span>
+        </p>
+        <p>
+          <i class="ion-ios-pricetags"></i>
+          <span ng-repeat="tag in post.tags"><span ng-if="$index!==0">,</span>{{tag.name}}</span>
+        </p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

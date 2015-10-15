@@ -1,0 +1,29 @@
+<ion-view view-title="To Do List">
+  <ion-header-bar align-title="left"  class="bar-subheader bar-positive">
+
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <button ng-click="onEdit()" ng-class="{'button-assertive': !isEdit, 'button-balanced': isEdit}" class="button ">{{ editBtnTxt }}</button>
+    </div>
+  </ion-header-bar>
+  <ion-content has-header="true">
+    <ion-list>
+      <ion-item ng-repeat="item in playlists" href="#/app/playlists/{{item.id}}">
+        {{item.title}}
+        <!--<ion-option-button class="button-positive" ng-click="editItem(playlist)">Edit</ion-option-button>-->
+        <!--<button ng-click="myClick()" stop-event="click">View</button>-->
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-positive">
+    <div ng-show="isEdit" class="buttons">
+      <button ng-click="showAddPopUp()" class="button button-balanced">Add Item</button>
+    </div>
+
+    <h1 class="title"></h1>
+    <div ng-show="isEdit" class="buttons" >
+      <button class="button button-assertive"  ng-click="removeAll()">Remove All</button>
+    </div>
+  </ion-footer-bar>
+</ion-view>

@@ -1,0 +1,53 @@
+<div class="item item-text-wrap reply-item"
+     on-hold="showReplyAction(reply)">
+  <a class="item-author positive button-link"
+     ui-sref="app.user({loginname: reply.author.loginname})">
+    <img class="avatar"
+         alt="{{::reply.author.loginname}}"
+         src="{{::reply.author.avatar_url | prefixUrl}}">
+    {{::reply.author.loginname}}
+  </a>
+  <span class="item-note" ng-if="reply.ups.length">
+    {{reply.ups.length}} 赞
+  </span>
+  <div class="reply-content" ng-bind-html="::reply.content | fixLink"></div>
+  <p class="reply-content">
+    <span class="text-note"
+          am-time-ago="::reply.create_at">
+    </span>
+    &nbsp;
+    <span ng-if="newReply.reply_id != reply.id">
+      <a class="button-link text-note"
+         href
+         ng-click="replyAuthor(reply)">
+        <i class="ion ion-reply"></i>
+        回复
+      </a>
+    </span>
+    <span ng-if="newReply.reply_id == reply.id">
+      <a class="button-link text-note positive"
+         href
+         ng-click="clearNewReply()">
+        <i class="ion ion-reply"></i>
+        回复
+      </a>
+    </span>
+    &nbsp;
+    <span ng-if="reply.ups.indexOf(me.id) != -1">
+      <a class="button-link assertive"
+         href
+         ng-click="toggleLike(reply)">
+        <i class="ion ion-thumbsup"></i>
+        已赞
+      </a>
+    </span>
+    <span ng-if="reply.ups.indexOf(me.id) == -1">
+      <a class="button-link text-note"
+         href
+         ng-click="toggleLike(reply)">
+        <i class="ion ion-thumbsup"></i>
+        赞
+      </a>
+    </span>
+  </p>
+</div>

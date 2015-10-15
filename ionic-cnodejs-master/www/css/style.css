@@ -1,0 +1,92 @@
+ion-nav-view {
+	background-color: #fff;
+}
+
+progress {
+	height: 5px;
+	margin: 0;
+}
+
+.bar-sm .button {
+	min-height: 35px;
+	line-height: 35px;
+	border-radius: 0 !important;
+}
+
+.bar-sm > .button:first-child {
+	border-left: 0;
+}
+
+.bar-sm > .button:last-child {
+	border-right: 0;
+}
+
+.list-topics .tab {
+	color: #fff;
+	padding: 1px 5px;
+	border-radius: 2px;
+	background-color: #999;
+}
+
+.list-replies {
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.item-avatar-sm {
+	min-height: 56px;
+	padding: 10px 15px 10px 56px;
+	border: 0;
+	border-bottom: 2px solid #eee;
+	border-radius: 0;
+}
+
+.item-avatar-sm > img:first-child {
+	max-width: 32px;
+	max-height: 32px;
+	top: 10px;
+	left: 15px;
+}
+
+.item-avatar-sm h4 {
+	color: #444;
+	margin-bottom: 0;
+}
+
+.item-avatar-sm p {
+	color: #999;
+	font-size: 12px;
+	margin: 0;
+}
+
+.item-avatar-sm .buttons {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+
+.item-avatar-sm .active {
+	color: #ef4e3a;
+}
+
+.list-replies .item-content {
+	border: 0;
+}
+
+.list-replies .item-content p {
+	overflow: auto;
+	text-overflow: clip;
+	white-space: normal;
+}
+
+.topic-content img, .list-replies .item-content img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Login */
+.login .button {
+	margin: 0;
+}

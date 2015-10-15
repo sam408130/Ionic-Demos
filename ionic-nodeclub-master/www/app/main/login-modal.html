@@ -1,0 +1,40 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">登录</h1>
+    <div class="buttons">
+      <button class="button button-icon icon icon-close"
+              ng-click="loginModal.hide()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin(accessToken)">
+      <div class="item item-text-wrap text-note">
+        请登录网页版
+        <a class="button-link positive"
+           external-link="{{::API.server}}">
+          {{::API.server}}
+        </a>
+        并拷贝设置页中的'Access Token'字符串<span ng-if="canScan">或者扫描其二维码</span>完成登录
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Access Token</span>
+          <input type="password"
+                 placeholder="填入您的Access Token字符串"
+                 ng-model="accessToken">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive"
+                  type="submit">登录</button>
+        </label>
+      </div>
+    </form>
+    <div class="padding text-center" ng-if="canScan">
+      OR
+      <br/>
+      <button class="button button-block button-positive"
+              type="button"
+              ng-click="doScan()">扫码登录</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

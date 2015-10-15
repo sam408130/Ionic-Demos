@@ -1,0 +1,421 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+// setting $energized to be HN orange
+$energized:                       #ff6600;
+$stable:                          #aaa;
+$light:                           #fff;
+
+// note that we can't use vars that haven't been declared yet, so we're using the $light hex code directly
+$tabs-light-bg:                  rgba($light,.97);
+$tabs-light-border:              $light;
+$bar-energized-bg:               rgba($energized,.97);
+$bar-energized-border:           $energized;
+
+$search-input:                   rgb(126, 50, 0);
+
+$item-default-active-bg:         rgba(#D9D9D9,.25);
+$item-default-active-border:     rgba(white,0);
+
+
+  // The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+// because sass can't calc, we make it a mixin
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+// overrides can go here
+//search bar styling
+form.item-input-inset{
+  padding:0;
+  .ion-ios7-close.dark{
+    font-size: 20px;
+    color:rgba($search-input, .5);
+    position: absolute;
+    right: -3px;
+    top:-9px;
+    height: 40px;
+    padding: 10px;
+    width: 40px;
+    &:active{
+      color:rgba($search-input, 1);
+    }
+  }
+}
+.item-input-wrapper.energized-bg{
+  background: darken($energized, 3%);
+  padding-right: 40px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  position:relative;
+  @include calc(padding-left, "50% - 35px");
+
+  input[type="search"] {
+    -moz-appearance:    textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    color:white;
+    padding-left: 0px;
+    font-weight: 300;
+    height:32px;
+  }
+  i{
+    position:relative;
+    font-size:16px;
+    height:22px;
+    color:rgba($search-input, .5);
+    text-decoration: none;
+    bottom: 10px;
+  }
+  &.left{
+    padding-left:5px;
+
+  }
+  input::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder {
+    color:rgba(126, 50, 0, .7);
+  }
+}
+
+// some fixes for ios style headers
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset {
+  .item-input-wrapper{
+    margin-top: -23px !important;
+    height:35px;
+  }
+  input[type="search"] {
+    padding-top: 5px;
+  }
+  .ion-ios7-close.dark{
+    margin-top:-2px;
+  }
+  .item-input-wrapper.energized-bg i{
+    top:-10px;
+  }
+}
+
+// list item styles
+.item{
+  margin: -1px 15px;
+  padding: 15px 0 15px 0;
+  border-right: none;
+  border-left: none;
+  @include calc(width, "100% - 30px");
+  text-overflow: clip;
+  white-space: normal;
+  border-bottom: none;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  &.post-list{
+    padding: 0 0 0 0;
+    height:92px
+  }
+  h2{
+    font-weight: 300;
+    font-size:95%;
+    margin-top:20px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  p{
+    color:$stable;
+    font-size:73%;
+    margin-bottom: 0;
+    font-weight:300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  // the comments are styled differently
+  &.comment{
+    p{
+      text-overflow: initial;
+      white-space: normal;
+      color:#585350;
+      font-weight: normal;
+      margin-bottom: 1em;
+      &.author{
+        color:#111111;
+        font-weight: bold;
+      }
+      &.timestamp{
+        float: right;
+        color: $stable;
+      }
+    }
+    a{
+      color:$energized;
+      word-break:break-all;
+    }
+    .text{
+      max-height: 800px;
+      overflow: hidden;
+    }
+  }
+}
+// hide comment animation
+.item.comment p, .item.comment i::before, .item.comment .text{
+  -webkit-transition: all .2s ease; /* For Safari 3.1 to 6.0 */
+  transition: all .2s ease;
+}
+
+.item.hidden{
+  p{
+    margin:0;
+  }
+  .text{
+    opacity: 0;
+    margin-bottom: 0;
+    max-height: 0px;
+  }
+  p.author {
+    color:$stable;
+  }
+  i::before{
+    color:$stable;
+    -webkit-transform:rotate(-90deg);
+  }
+
+}
+.ion-chatbubble.light{
+  font-family: $font-family-sans-serif;
+  color:$stable;
+  -webkit-text-stroke: 0px transparent;
+  font-size: 14px;
+  width: 50px;
+  padding-top:29px;
+  text-align: center;
+  position:relative;
+  right:-5px;
+  display:block;
+  float:right;
+  height: 86px;
+
+  background:url('../img/comments-icon.png') 5px 19px no-repeat;
+
+  background-size:41px 41px;
+  &::before{
+    display:none;
+  }
+}
+ion-tabs{
+  overflow-x: hidden;
+}
+.bar .button.ion-ios7-arrow-back{
+  font-size: 16px;
+  padding: 0 16px 0 0;
+}
+ion-infinite-scroll .scroll-infinite-content{
+  font-size: 16px;
+}
+// loading fix for ipad
+.backdrop{
+  min-height: 1024px;
+}
+// spinner
+.spinner {
+  margin: 100px auto 0;
+  text-align: center;
+  font-size: 50px;
+  position: absolute;
+  top: 50px;
+  left: -webkit-calc(50% - 25px);
+  z-index: 2;
+  -webkit-transition:all .4s cubic-bezier(.6,-1.6,.92,.48);
+  transition:all .4s cubic-bezier(.6,-1.6,.92,.48);
+}
+.spinner.ng-hide-add{
+  -webkit-transform: scale(1,1);
+  transform: scale(1,1);
+}
+.spinner.ng-hide-add-active{
+  -webkit-transform: scale(0,0);
+  transform: scale(0,0);
+}
+.item-input-wrapper.light-bg{
+  border-radius: 2px;
+  padding: 8px 20px;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+  margin-top:2px;
+  i{
+    font-size: 150%;
+  }
+}
+// make header/tabs bar taller
+.tabs-top {
+  & > .tabs {
+    top: 64px;
+    .tab-title{
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+  .bar-header{
+    height:64px;
+    &.bar-energized{
+      background-color: rgba(255, 102, 0, 1);
+      padding-top: 0px;
+    }
+    .back-button{
+      margin-top:15px;
+    }
+    .title{
+      position:static;
+      text-align: left;
+      padding-left: 10px;
+      font-size:22px;
+      padding-top:10px;
+      height:auto;
+      font-weight: 400;
+    }
+  }
+}
+.has-header{
+  top:43px;
+  &.has-tabs-top{
+    top:112px
+  }
+}
+ion-nav-view{
+  background-color:white;
+}
+
+#loading-bar{
+  -webkit-transition: 350ms linear all;
+  transition: 350ms linear all;
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active{
+    opacity: 0;
+  }
+  &.ng-enter.ng-enter-active,
+  &.ng-leave{
+    opacity: 1;
+  }
+  .x-bar {
+    -webkit-transition: width 350ms;
+    transition: width 350ms;
+
+    background: $energized;
+    position: fixed;
+    z-index: 10002;
+    bottom: 48px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom-right-radius: 1px;
+    border-top-right-radius: 1px;
+    .peg {
+      position: absolute;
+      width: 70px;
+      right: 0;
+      top: 0;
+      height: 2px;
+      opacity: .45;
+      -webkit-border-radius: 100%;
+      border-radius: 100%;
+    }
+  }
+}
+
+.platform-android{
+  .nav-bar-block{
+    //position: relative;
+    .bar-header{
+      height:65px;
+      .button{
+        top:5px;
+      }
+      .title{
+        top:10px;
+        font-size: 22px;
+        font-weight: 400;
+      }
+    }
+  }
+  .back-button:not(.ng-hide)+div+.title{
+    margin-left: -15px;
+  }
+  .item.comment p.timestamp {
+    float: none;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    text-align: right;
+  }
+  .item.comment p, .item.comment i, .item.comment .text{
+    -webkit-transition: none; /* For Safari 3.1 to 6.0 */
+    transition: none;
+  }
+  .tabs{
+    .tab-item{
+      &.tab-item-active .tab-title,
+      &.activated .tab-title{
+        color:white;
+      }
+      .tab-title{
+        font-size: 16px;
+      }
+    }
+    color:white;
+  }
+  .title{
+    overflow: visible;
+  }
+  .bar-header.item-input-inset{
+    top: -10px;
+    .item-input-wrapper.light-bg{
+      border-radius: 2px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height:42px;
+      position: relative;
+    }
+    .ion-android-search{
+      font-size:18px;
+    }
+    .icon.ion-ios7-close{
+      top:-1px;
+      color:#aaa;
+    }
+  }
+
+  .tabs-background-energized .tabs{
+    border-bottom-color: #eee !important;
+    background-image:none !important;
+  }
+  [nav-bar-transition="android"] [nav-bar="active"] .bar,
+  [nav-bar-transition="android"] [nav-bar="entering"] .bar{
+    background:$energized;
+  }
+  #loading-bar .x-bar{
+    bottom: 0;
+  }
+
+
+  *{font-family: "Roboto", sans-serif !important;}
+}

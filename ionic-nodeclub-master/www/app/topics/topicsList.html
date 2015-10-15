@@ -1,0 +1,25 @@
+<div class="list">
+  <div collection-repeat="topic in topics track by topic.id"
+       item-width="100%"
+       item-height="72"
+       item-render-buffer="15"
+       class="item item-avatar item-topic"
+       ui-sref="app.topic({topicId: topic.id})">
+    <img ng-src="{{topic.author.avatar_url | prefixUrl}}">
+    <h2>{{topic.title}}</h2>
+    <p>
+      <span class="label label-positive"
+            ng-if="topic.top">置顶</span>
+      <span class="label label-positive"
+            ng-if="topic.good && !topic.top">精华</span>
+      <span class="label label-default"
+            ng-if="!topic.top && !topic.good">{{topic.tab | tabLabel}}</span>
+      {{topic.author.loginname}}
+      <span class="item-note"
+            am-time-ago="topic.last_reply_at">
+      </span>
+    </p>
+  </div>
+  <div class="item text-center"
+       ng-if="topics && !topics.length">无话题</div>
+</div>

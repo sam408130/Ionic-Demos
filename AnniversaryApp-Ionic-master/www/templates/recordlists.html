@@ -1,0 +1,31 @@
+<ion-view title="{{categorySetting.selectedCategoryTitle}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-plus" ng-click="addNewRecordClick()"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item ng-repeat="dateRecord in dateRecords | filter : customFilter" href="#/app/editrecord/{{dateRecord.id}}">
+                <div style="background-color: {{ categoryColorDict[dateRecord.categoryId]}};position: absolute; left: 0px; width: 5px; height: 100%; margin-top: -16px;"></div>
+                <div class="row row-center">
+                    <div class="col">
+                        <span style="font-size: 22px;">{{dateRecord.title | cut : true : 8 : ' ...'}}</span>
+                        <br>
+                        <span style="font-size: 12px;">{{formatDate(dateRecord.date)}}</span>
+                    </div>
+                    <div class="col text-right" style="margin-right: -30px;">
+                        <span style="font-size: 23px;" ng-class="diffDateClass(dateRecord.date)">{{diffDate(dateRecord.date)}}</span>
+                        <br>
+                        <span style="font-size: 12px;">{{diffDateString(dateRecord.date)}}</span>
+                    </div>
+                </div>
+                <!--<ion-option-button class="button-assertive" style="padding-top: 25px;"-->
+                                   <!--ng-click="edit(item)">-->
+                    <!--删除-->
+                <!--</ion-option-button>-->
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

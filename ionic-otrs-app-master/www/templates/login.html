@@ -1,0 +1,15 @@
+<ion-view title="欢迎登录客服系统">
+  <ion-content has-tabs="true">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <span class="input-label">用户名</span>
+        <input type="text" ng-model="credentials.username" placeholder="用户名或机构代码">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">口令</span>
+        <input type="password" ng-model="credentials.password" placeholder="密码">
+      </label>
+      <button class="button button-positive button-block" ng-click="login(credentials)">登录</button>
+    </div>
+  </ion-content>
+</ion-view>

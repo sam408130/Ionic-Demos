@@ -1,0 +1,11 @@
+{
+  "name": "ionic-nodeclub",
+  "app_id": "ionic-nodeclub",
+  "gulpStartupTasks": [
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/app/**/*",
+    "www/lib/**/*.js"
+  ]
+}

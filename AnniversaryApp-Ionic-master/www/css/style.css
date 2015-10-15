@@ -1,0 +1,7 @@
+/* Empty. Add your own CSS if you like */
+
+.list .item.disabled {
+    color: gray;
+    opacity: .4;
+    pointer-events: none;
+}

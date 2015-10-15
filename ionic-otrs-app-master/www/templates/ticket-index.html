@@ -1,0 +1,43 @@
+<ion-view title="工单列表">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon ion-compose" ng-click="modal.show()"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-refresher pulling-text="" on-refresh="getByStartAndEnd(true)">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="ticket in tickets" type="item-text-wrap" class="item item-icon-right" href="#/tab/tickets/{{ticket.id}}">
+        {{ticket.created}}&nbsp;{{ticket.queue}}&nbsp;{{ticket.status}}
+        <span class="badge badge-assertive" ng-show="ticket.status=='新建'">1</span>
+        <span class="icon ion-ios7-arrow-forward" ng-show="ticket.status!='新建'"></span>
+        <p>{{ticket.description}}</p>
+        <ion-option-button class="button-positive" ng-click="setPriority(ticket)">加急</ion-option-button>
+      </ion-item>
+      <!--<ion-infinite-scroll distance="10%" ng-if="!noMoreItemsAvailable" icon="ion-loading-c" on-infinite="getByStartAndEnd(true)">-->
+    </ion-list>
+    <button class="button button-light button-full button-clear" ng-show="showMoreButton()" ng-click="stepIt()">更多工单</button>
+  </ion-content>
+</ion-view>
+<script id="ticket-create.html" type="text/ng-template">
+<div class="modal" ng-controller="TicketCreateCtrl">
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">新增问题</h1>
+    <button class="button button-clear button-primary" ng-click="modal.hide()">取消</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="padding">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">联系方式</span>
+          <input ng-model="newTicket.title" type="text" placeholder="手机号或固定电话"> 
+        </label>
+        <label class="item item-input">
+          <span class="input-label">问题内容</span>
+          <input ng-model="newTicket.body" type="text" placeholder="提交的问题内容">
+        </label>
+        <button class="button button-full button-positive" ng-click="createTicket(newTicket.title,newTicket.body)">保存</button>
+      </div>
+    </div>
+  </ion-content>
+</div>
+</script>

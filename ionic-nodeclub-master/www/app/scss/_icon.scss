@@ -1,0 +1,28 @@
+.icon-person {
+  @extend .ion-ios-person-outline;
+}
+.icon-new-topic {
+  @extend .ion-android-add;
+}
+.icon-more-action {
+  @extend .ion-android-more-vertical;
+}
+.icon-close {
+  @extend .ion-ios-close-empty;
+}
+.icon-done-all {
+  @extend .ion-android-done-all;
+}
+.icon-more {
+  @extend .ion-ios-more;
+}
+
+// android overwrite
+.platform-android {
+  .icon-person {
+    @extend .ion-android-person;
+  }
+  .icon-more {
+    @extend .ion-android-more-vertical;
+  }
+}

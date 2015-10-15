@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
+		<script src="lib/ngCordova/ng-cordova.js"></script>
+
+		<!-- cordova script (this will be a 404 during development) -->
+		<script src="cordova.js"></script>
+
+		<!-- your app's js -->
+		<script src="js/app.js"></script>
+		<script type="text/javascript" src="js/controller.js"></script>
+		<script type="text/javascript" src="js/service.js"></script>
+	</head>
+
+	<body ng-app="starter">
+
+		<ion-pane>
+			<ion-header-bar class="bar-stable">
+				<h1 class="title">拍照、相册并上传至Upyun Demo</h1>
+			</ion-header-bar>
+			<ion-content ng-controller="DemoCtrl">
+				<div class="list">
+					<div class="item item-avatar item-icon-right">
+						<img ng-src="{{image}}!60" name="AssistImageName" />
+						<i class="icon ion-images royal" data-tap-disabled="true" ng-click="showImageUploadChoices()"></i>
+					</div>
+				</div>
+
+				<div class="list card">
+					<div class="item item-body">
+						<img ng-src="{{image}}" name="AssistImageName" />
+						<p>
+							测试图片
+						</p>
+					</div>
+				</div>
+			</ion-content>
+		</ion-pane>
+	</body>
+
+</html>

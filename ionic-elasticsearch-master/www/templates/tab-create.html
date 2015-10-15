@@ -1,0 +1,37 @@
+<ion-view view-title="创建">
+  <ion-content>
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="用户名" ng-model="data.username">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="手机号" ng-model="data.phone_number">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="邮箱(非必填)" ng-model="data.email">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="标题" ng-model="data.title">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="简介" ng-model="data.body"></textarea>
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="价格" ng-model="data.price">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="数量" ng-model="data.number">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="省" ng-model="data.province">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="市" ng-model="data.city">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="地址" ng-model="data.address">
+        </label>
+      </div>
+      <button type="submit" class="button button-positive button-block" ng-click="newPost()">创建</button>
+  </ion-content>
+</ion-view>

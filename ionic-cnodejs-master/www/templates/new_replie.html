@@ -1,0 +1,25 @@
+<div class="modal">
+
+	<ion-header-bar class="bar-balanced">
+		<div class="buttons">
+			<button class="button button-clear button-icon ion-checkmark-round" ng-click="newReplie()"></button>
+		</div>
+		<h1 class="title">回复 {{ at }}</h1>
+		<div class="buttons">
+			<button side="left" class="button button-clear button-icon ion-close-round" ng-click="newReplieModal.hide()"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="new-topics" scroll="false">
+
+		<div class="padding">
+			<div class="list">
+				<label class="item item-input" data-tap-disabled="true">
+					<textarea rows="12" placeholder="说点啥..." ng-model="replieParams.content"></textarea>
+				</label>
+			</div>
+		</div>
+
+	</ion-content>
+
+</div>

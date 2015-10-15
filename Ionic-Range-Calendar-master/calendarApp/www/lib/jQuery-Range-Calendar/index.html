@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://afreeux.com/range-calendar-jquery-plugin/# -->
+<html lang="en-US" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+<title>jQuery Range Calendar plugin | Demo</title>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="js/moment+langs.min.js"></script>
+<script type="text/javascript" src="js/jquery.rangecalendar.js"></script>
+
+
+
+<link rel="stylesheet" id="bootstrap-css" href="css/bootstrap.css" type="text/css" media="all">
+<link rel="stylesheet" id="rangecalendar-style-css" href="css/rangecalendar.css" type="text/css" media="all">
+<link rel="stylesheet" id="rangecalendar-style-css" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="jquery-ui-style-css" href="css/jquery-ui-1.10.3.custom.min.css" type="text/css" media="all">
+
+
+<script>
+	$(document).ready(function(){
+		
+		var defaultCalendar = $("#cal1").rangeCalendar();
+		
+		$("#setDateBt").click(function () {
+			var newDate = new Date();
+			rangeCalendar.setStartDate(newDate);
+			
+			rangeCalendar.update();
+		});
+		
+		$("#addMonthBt").click(function () {
+		
+			var newDate = moment().add('months', 1);
+			rangeCalendar.setStartDate(newDate);
+		});
+		
+		
+		
+		
+		var customizedRangeCalendar = $("#cal2").rangeCalendar({theme:"full-green-theme"});
+		var languageCalendar = $("#cal3").rangeCalendar({lang:"it"});
+		var rangeCalendar =  $("#cal4").rangeCalendar({weekends:false});
+		var callbackRangeCalendar =  $("#cal5").rangeCalendar({changeRangeCallback: rangeChanged,weekends:false});
+		
+		function rangeChanged(target,range){
+	    
+			
+			console.log(range);
+		    var startDay = moment(range.start).format('DD');
+		    var startMonth = moment(range.start).format('MMM');
+		    var startYear = moment(range.start).format('YY');
+		    var endDay = moment(range.end).format('DD');
+		    var endMonth = moment(range.end).format('MMM');
+		    var endYear = moment(range.end).format('YY');
+		    
+		    
+		    $(".calendar-values .start-date .value").html(startDay);
+		    $(".calendar-values .start-date .label").html("");
+		    $(".calendar-values .start-date .label").append(startMonth);
+		    $(".calendar-values .start-date .label").append("<small>"+startYear+"</small>");
+		    $(".calendar-values .end-date .value").html(endDay);
+		    $(".calendar-values .end-date .label").html("");
+		    $(".calendar-values .end-date .label").append(endMonth);
+		    $(".calendar-values .end-date .label").append("<small>"+endYear+"</small>");
+		    $(".calendar-values .days-width .value").html(range.width);
+		    $(".calendar-values .from-now .label").html(range.fromNow);
+		    
+		}
+    
+		function ragneChanged(target,range) {
+			
+			console.log(range);
+		}
+    
+	});
+</script>
+
+<body>
+
+	
+	<dir class="col-md-12">
+	
+	<h1>jQuery Range Calendar <small>v1.0</small></h1>
+	
+	Made by : Libero Angelo</br>
+	Email: <a href="mailto:angelo@afreeux.com">angelo@afreeux.com</a></br>
+	Web site: <a href="http://afreeux.com/range-calendar-jquery-plugin/">Visit plugin Web Page</a> for more information.</br>
+	</br>
+	</br>
+	
+
+	
+	
+	<div class="section">
+		<h2>1.Simple Range Calendar</h2>
+		<code class="code">
+		    <span class="sample-title">Sample #1</span> <br>
+		    $(document).ready(function(){<br><br>
+		   	 	var simpleRangeCalendar = $("#range-calendar").rangeCalendar();<br>
+		    });
+		</code>
+		
+		<div id="cal1"></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<div class="col-md-12">
+	
+	
+	
+	
+	<!-- Methods -->
+		<div class="section">
+		    <h1 class="section-title">Methods<span class="text-muted"></span></h1>
+    	    <table class="table table-bordered table-striped">
+    	        <thead>
+    	            <tr>
+    	                <th>Method</th>
+    	                <th>Params</th>
+    	                <th>Return</th>
+    	            </tr>
+    	        </thead>
+    	        <tbody>
+    	            <tr>
+    	                <td><code>range</code></td>
+    	                <td></td>
+    	                <td>Current range struct (start,end,width)</td>
+    	            </tr>  
+    	            
+    	            <tr>
+    	                <td><code>rangeWidth</code></td>
+    	                <td></td>
+    	                <td>Current range width</td>
+    	            </tr>  
+    	            
+    	            <tr>
+    	                <td><code>setRangeWidth</code></td>
+    	                <td><b>rangeWidth</b></td>
+    	                <td></td>
+    	            </tr>   
+    	            <tr>
+    	                <td><code>setStartDate</code></td>
+    	                <td><b>new date object</b><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp"> - (date)</a></td>
+    	                <td></td>
+    	            </tr>
+    	            
+    	        </tbody>
+    	    </table>
+		</div>
+		    	
+		<!-- Dependecies -->
+		<div class="section">
+		    <h1 class="section-title">Options<span class="text-muted"></span></h1>
+    	    <table class="table table-bordered table-striped">
+    	        <thead>
+    	            <tr>
+    	                <th>Option</th>
+    	                <th>Default</th>
+    	            </tr>
+    	        </thead>
+    	        <tbody>
+    	            <tr>
+    	                <td><code>lang</code></td>
+    	                <td><b>"en"</b> - (string)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>theme</code></td>
+    	                <td><b>"default-theme"</b> - (string)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>startDate</code></td>
+    	                <td><b>Now date object</b><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp"> - (date)</a></td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>endDate</code></td>
+    	                <td><b>12 months from now date object</b><a href="http://www.w3schools.com/jsref/jsref_obj_date.asp"> - (date)</a></td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>start</code></td>
+    	                <td><b>"+7"</b> - (string)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>startRangeWidth</code></td>
+    	                <td><b>3</b> - (integer)</td>
+    	            </tr>
+    	            
+    	             <tr>
+    	                <td><code>minRangeWidth</code></td>
+    	                <td><b>1</b> - (integer)</td>
+    	            </tr>
+    	            
+    	            <tr>
+    	                <td><code>maxRangeWidth</code></td>
+    	                <td><b>7</b> - (integer)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>autoHideMonths</code></td>
+    	                <td><b> false</b> - (boolean)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>visible</code></td>
+    	                <td><b>true</b> - (boolean)</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>changeRangeCallback</code></td>
+    	                <td><b>null</b> - (function)</td>
+    	            </tr>
+    	            
+    	            
+    	        </tbody>
+    	    </table>
+		</div>
+		    		
+		
+		<!-- Dependecies -->
+		
+		<div class="section">
+		    <h1 class="section-title">Required files <span class="text-muted">Dependencies </span></h1>
+    	    <table class="table table-bordered table-striped">
+    	        <thead>
+    	            <tr>
+    	                <th>External Libraries</th>
+    	                <th>Description</th>
+    	            </tr>
+    	        </thead>
+    	        <tbody>
+    	            <tr>
+    	                <td><code>jQuery</code></td>
+    	                <td><a href="http://jquery.com/download/">Download</a>.</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>jQuery UI</code></td>
+    	                <td><a href="http://jqueryui.com/download/">Download</a>.</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>Moment.js</code></td>
+    	                <td><a href="http://momentjs.com/">Download</a> the <b>moment+lang.js</b> for supporting dates manipolation and <b>localization</b>.</td>
+    	            </tr>
+    	            <tr>
+    	                <td><code>jQuery UI Touch Punch</code></td>
+    	                <td>Enable <b>touch events</b> on web sites. Download <a href="http://touchpunch.furf.com/">here</a>.</td>
+    	            </tr>
+    	        </tbody>
+    	        <thead>
+    	            <tr>
+    	                <th>CSS</th>
+    	                <th>Description</th>
+    	            </tr>
+    	        </thead>
+    	        <tbody>
+    	            <tr>
+    	                <td><code>rangecalendar.css</code></td>
+    	                <td>Avaiable in the plugin folder. Includes 5 themed CSS.</td>
+    	            </tr>
+    	        </tbody>
+    	        
+    	    </table>
+		</div>
+	</div>
+			
+
+	  
+	
+</body></html>

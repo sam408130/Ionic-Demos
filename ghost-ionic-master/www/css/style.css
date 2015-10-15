@@ -1,0 +1,184 @@
+/* Empty. Add your own CSS if you like */
+/** 覆盖ionic默认样式 */
+.list {
+    padding-top: 0;
+}
+
+.item-thumbnail-left {
+    padding-top: 16px;
+}
+
+/** 自定义样式 */
+.loading-fullscreen {
+    width: 100%;
+    text-align: center;
+    margin-top: 45%;
+}
+
+/** 文章列表页面样式 */
+.item-thumbnail-left > .no-cover {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    background-color: #e3e3e3;
+    color: #666;
+    font-size: 1rem;
+}
+
+.posts.list .item-body {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.posts.list .item-body .cover, .posts.list .item-body .no-cover, .post .item-body .cover {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    height: 180px;
+}
+
+.posts.list .item-body .no-cover {
+    height: 200px;
+}
+
+.posts.list .item-body .cover h1, .posts.list .item-body .no-cover h1 {
+    margin-top: 10%;
+    color: #fff;
+    font-size: 30px;
+}
+
+.posts.list .item-body .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.posts.list .item-body .info .col {
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.6);
+}
+
+.posts.list .item-body .info .col:last-child {
+    border-right: none;
+}
+
+.post .item-body .row .col {
+    color: #666;
+}
+
+/** 文章页面样式 */
+.ghost-post {
+    font-family: "Merriweather", serif;
+    padding: 16px;
+}
+
+.ghost-post h1, .ghost-post h2, .ghost-post h3, .ghost-post h4, .ghost-post h5, .ghost-post h6 {
+    -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+    color: #2E2E2E;
+    line-height: 1.15em;
+    margin: 0 0 0.4em 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+.ghost-post h1 {
+    font-size: 36px;
+    letter-spacing: -2px;
+    text-indent: -3px;
+}
+
+.ghost-post h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.ghost-post h3 {
+    font-size: 28px;
+}
+
+.ghost-post h4 {
+    font-size: 24px;
+}
+
+.ghost-post h5 {
+    font-size: 20px;
+}
+
+.ghost-post h6 {
+    font-size: 16px;
+}
+
+.ghost-post p, .ghost-post ul, .ghost-post ol, .ghost-post dl {
+    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    margin: 0 0 1.75em 0;
+}
+
+.ghost-post b, .ghost-post strong {
+    font-weight: 700;
+}
+
+.ghost-post a {
+    color: #4A4A4A;
+    transition: color ease 0.3s;
+}
+
+.ghost-post img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0.6em 0;
+}
+
+code, tt {
+    background: #f6f6f6;
+    color: #93c763;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 2px;
+    padding: 0 4px;
+}
+
+.ghost-post p, .ghost-post ul, .ghost-post ol, .ghost-post dl {
+    -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -moz-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    -o-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
+    margin: 0 0 1.75em 0;
+}
+
+.ghost-post ol, .ghost-post ul {
+    padding-left: 1rem;
+    list-style: inherit;
+}
+
+.ghost-post li {
+    margin: 0.4em 0;
+}
+
+.ghost-post blockquote {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.75em 0;
+    padding: 0 0 0 1.75em;
+    border-left: #4A4A4A 0.4em solid;
+}
+
+.ghost-post mark {
+    background-color: #FFC336;
+    color: #000;
+}

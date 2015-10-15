@@ -1,0 +1,148 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>IonicLogin Example</title>
+    <!--Folhas de Estilo-->
+	<link href="css/app.css" rel="stylesheet">
+    <link href="css/ionic.min.css" rel="stylesheet">
+  </head>
+  <body>	
+    <ion-nav-bar animation="nav-title-slide-ios7" 
+                 type="bar-positive" 
+                 back-button-type="button-icon" 
+                 back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+    <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    <script id="sign-in.html" type="text/ng-template">
+      <ion-view title="	Login" left-buttons="leftButtons" right-buttons="rightButtons">
+        <ion-content has-header="true">
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">LOGIN</span>
+              <input type="text" id="usuario" value="">
+            </label>
+            <label class="item item-input">
+              <span class="input-label">SENHA</span>
+              <input type="password" id="senha" value="">
+            </label>
+          </div>
+          <div class="padding">
+            <button class="button button-block button-positive" id="logar">
+              ENTRAR
+            </button>
+            <p class="text-center">
+              <a href="#/forgot-password">Esqueci minha Senha</a>
+            </p>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+    <script id="forgot-password.html" type="text/ng-template">
+      <ion-view title="Esqueci Minha Senha">
+        <ion-content has-header="true" padding="true">
+          <p>
+            Não se preocupe, para recuperar sua senha, basta apenas, colocar o email de cadastro no campo abaixo, que enviaremos para o email informado um link de redefinição da senha.
+          </p>
+          <p>
+            <label>E-mail:
+				<input type="email" placeholder="example@email.com" id="email" required>
+			</label>
+          	<button class="button button-block button-positive" id="reset">
+              REDEFINIR
+            </button>
+          </p>
+          <p>
+            Retorne para o 	<a href="#/sign-in">Login</a>.
+          </p>
+        </ion-content>
+      </ion-view>
+    </script>
+    <script id="tabs.html" type="text/ng-template">
+      <ion-tabs tabs-style="tabs-icon-top" tabs-type="tabs-positive">
+
+        <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+          <ion-nav-view name="home-tab"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Sobre" icon="ion-ios7-information" href="#/tab/about">
+          <ion-nav-view name="about-tab"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="Sair" icon="ion-log-out" href="#/sign-in">
+        </ion-tab>
+
+      </ion-tabs>
+    </script>
+    <script id="home.html" type="text/ng-template">
+      <ion-view title="Menu">
+        <ion-content has-header="true" padding="true">
+        	<a href="#/tab/cadastrar" class="item item-icon-left">
+				<i class="icon"></i>
+				Cadastrar Aluno
+			</a>
+        </ion-content>
+      </ion-view>
+    </script>
+    <script id="cadastrar.html" type="text/ng-template">
+      <ion-view title="Cadastrar">
+        <ion-content has-header="true" padding="true">
+          <form id='cadastroAluno'>
+                <label>Categoria:<br/>
+                    <select name="categorias" id="selectTurmas">
+                        <option value="Baby">Baby</option>
+                        <option value="Mini">Mini</option>
+                        <option value="Sub">Sub</option>
+                        <option value="Adulto">Adulto</option>
+                    </select>
+                </label><br/>
+                <label>Nome:
+                    <input type="text" placeholder="Nome do Aluno" id="nomeAluno" required>
+                </label>
+                <label>Responsável:
+                    <input type="text" placeholder="Responsável" id="nomeResponsavel">
+                </label>
+                <label>Contato:
+                    <input type="phone" placeholder="(xx)xxxx-xxxx" value="" id="telefone" required>
+                </label>
+                <label>Data de Nascimento:
+                    <input type="date" id="dataNascimento" required>
+                </label>
+                <label>E-mail:
+                    <input type="email" placeholder="example@email.com" id="email" required>
+                </label>
+                <label>Escola:
+                    <input type="text" placeholder="Nome da Escola" id="escola">
+                </label>
+                <label>Dia de Entrada:
+                    <input type="date" id="dataEntrada" required>
+                </label>
+                <label>Valor da Mensalidade:
+                    <input type="text" placeholder="R$ xx,xx" id="valor" required>
+                </label>
+                <label>Dias do Treino:
+                    <input type="text"  placeholder="Ex.: Seg e Quarta" id="diaTreino" required>
+                </label>
+                <label>Observações:<br/>
+                    <textarea  rows="6" cols="12" placeholder="Observação"
+                    id="observacao"></textarea>
+                </label>
+                <input type="submit" id="salvar" value="Salvar"/>
+            </form>
+        </ion-content>
+      </ion-view>
+    </script>
+    <script id="about.html" type="text/ng-template">
+      <ion-view title="Sobre">
+        <ion-content has-header="true" padding="true">
+          <h3>Aplicativo de exemplo de login com parse e ionic</h3>
+          <p>Desenvolvido por: Silas monteiro Limeira</p>
+        </ion-content>
+      </ion-view>
+    </script>
+  </body>
+<!--Scripts Libs-->  
+<script src="js/libs/ionic.bundle.min.js"></script>
+<script src="js/libs/jQueryv1.11.0.js"></script>
+<script src="js/libs/parse.js"></script>
+<!--Meu app-->
+<script src="js/app.js"></script>
+</html>

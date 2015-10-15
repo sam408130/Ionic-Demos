@@ -1,0 +1,83 @@
+.header-replies-button {
+  min-height: 25px !important;
+  line-height: 24px !important;
+  height: 25px !important;
+  background-color: $button-positive-border !important;
+  margin: 4px;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    border-top: 5px solid $button-positive-border;
+    border-left: 0px solid transparent;
+    border-right: 10px solid transparent;
+    left: -1px;
+    bottom: -5px;
+  }
+  span {
+    margin: 0 !important;
+  }
+}
+.header-avatar-button {
+  line-height: 34px;
+  height: 34px;
+  .avatar {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+    vertical-align:middle;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.15);
+  }
+}
+.button-link {
+  @include transition(opacity .1s);
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: $button-positive-bg !important;
+  }
+  &.active,
+  &.activated {
+    color: $button-positive-active-bg !important;
+  }
+}
+.button-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border: none;
+  border-radius: 50%;
+  min-width: 56px;
+  min-height: 56px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  z-index: 20;
+  @include transition(0.2s linear);
+  @include transition-property('background-color, box-shadow');
+  &.active,
+  &.activated {
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.36) !important;
+  }
+}
+.reply-button {
+  margin-left: 0 !important;
+  font-size: 16px !important;
+  border: none;
+  background-color: #EEE;
+}
+.new-reply {
+  background: none;
+
+  textarea {
+    background: none;
+    max-height: 130px;
+    box-sizing: border-box;
+    min-height: 34px;
+    height: 34px;
+    padding: 5px;
+    border-bottom: 1px solid $item-stable-border;
+    &:focus {
+      border-bottom: 1px solid $item-positive-border;
+    }
+  }
+}

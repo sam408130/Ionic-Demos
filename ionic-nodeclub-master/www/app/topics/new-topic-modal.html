@@ -1,0 +1,39 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <h1 class="title">发布话题</h1>
+    <div class="buttons">
+      <button class="button button-icon icon icon-close"
+              ng-click="newTopicModal.hide()"></button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doPostTopic()">
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            板块
+          </div>
+          <select ng-model="newTopic.tab"
+                  ng-options="tab.value as tab.label for tab in ::tabs">
+            <option value=''>请选择</option>
+          </select>
+        </label>
+        <label class="item item-input">
+          <input type="text"
+                 placeholder="填入标题（不少于10个字）"
+                 ng-model="newTopic.title">
+        </label>
+        <label class="item item-input">
+          <textarea msd-elastic
+                    ng-model="newTopic.content"
+                    placeholder="填入内容">
+          </textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive"
+                  type="submit">提交</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="设置">
+  <ion-nav-buttons side="right">
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="list">
+
+     <ion-toggle class="toggle-positive"
+                 ng-model="settings.popRepliesVisible"
+                 ng-change="updateSettings()">
+       是否显示最赞回复
+     </ion-toggle>
+
+     <ion-toggle class="toggle-positive"
+                 ng-model="settings.latestRepliesDesc"
+                 ng-change="updateSettings()">
+        倒序显示最新回复
+     </ion-toggle>
+
+      <div class="item"
+           ng-if="appVersion">
+        当前版本<span class="item-note">{{::appVersion}}</span>
+      </div>
+      <div class="item"
+           ng-if="appVersion && hasNewVersion">
+        <a class="button button-positive button-full"
+           external-link="{{::newVersionData.installUrl}}">
+          下载更新
+          <small class="text-note">
+            {{::newVersionData.versionShort}}
+          </small>
+        </a>
+      </div>
+
+    </div>
+
+  </ion-content>
+
+</ion-view>

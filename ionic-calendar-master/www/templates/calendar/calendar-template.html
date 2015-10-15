@@ -1,0 +1,53 @@
+<div class="calendar">
+    <div class="clearfix calendarHeader row">
+
+        <div class="btn-group">
+            <button class="left button button-dark" ng-click="navigate.prevMotnth()">{{language.prevMonth}}</button>
+            <div class="month-name">
+                <span>{{currentDate.getMonthName() }}
+			    {{currentDate.getFullYear() }}
+			    </span>
+
+            </div>
+            <button class="right button button-dark" ng-click="navigate.nextMotnth()">{{language.nextMonth}}</button>
+        </div>
+    </div>
+    <div class="cal-row-fluid cal-row-head">
+        <div class="cal-span1">{{language.d1}}</div>
+        <div class="cal-span1">{{language.d2}}</div>
+        <div class="cal-span1">{{language.d3}}</div>
+        <div class="cal-span1">{{language.d4}}</div>
+        <div class="cal-span1">{{language.d5}}</div>
+        <div class="cal-span1">{{language.d6}}</div>
+        <div class="cal-span1">{{language.d0}}</div>
+    </div>
+    <div class="cal-month-box">
+
+        <div class="cal-row-fluid" ng-repeat="week in month">
+
+            <div class="cal-span1 cal-cell" ng-repeat="day in week">
+
+                <div class="cal-month-day" ng-class="{'cal-day-outmonth' : day.outmonth , 'cal-day-weekend' : day.day == 6 || day.day == 7 , 'cal-day-today' : day.isToday}" ng-controller="CalendarPopupController" ng-click="showPopup($event, day)">
+
+                    <div class="icon-container" ng-repeat="event in day.events">
+                        <div ng-switch on="event.eventType">
+                            <div ng-switch-when="special-event">
+                                <span class="ion-heart"></span>
+                            </div>
+                            <div ng-switch-when="normal-event">
+                                <span class="ion-alert"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <span data-cal-date="{{day.dateFormatted}} " data-cal-view="day ">{{day.date}}</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

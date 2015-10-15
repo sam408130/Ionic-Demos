@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.lanceli.cnodejs"
+  version="1.2.2"
+  android-versionCode="117"
+  ios-CFBundleVersion="117"
+  xmlns="http://www.w3.org/ns/widgets"
+  xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="10000" />
+    <preference name="AutoHideSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <name display="CNode社区">CNodeJs</name>
+    <description>
+      Ionic app for https://cnodejs.org
+    </description>
+    <author email="lyfuture@gmail.com" href="http://github.com/lanceli">
+      Lance Li
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

@@ -1,0 +1,13 @@
+<ion-view view-title="Directive Example">
+  <ion-content class="itemSpacing">
+    <h1>Global Variable Value = {{ AppCount }}</h1>
+    <button class="button button-assertive" ng-click="incrementCount()">
+      Increment Global Var Count
+    </button>
+
+    <br><br>
+    <h2>Below is a custom directive which changes the color of the text displayed below based on the input color</h2>
+    <input type="text" ng-model="color" placeholder="Enter a color"/>
+    <hello-world/>
+  </ion-content>
+</ion-view>

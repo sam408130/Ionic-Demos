@@ -1,0 +1,23 @@
+<ion-view title="Comments">
+  <ion-content class="has-header">
+    <ion-list>
+      <!-- not using collection repeat since we have a rather finite amount of results and variable height items -->
+      <ion-item class="item comment"
+                ng-repeat="comment in comments"
+                ng-show="percentLoaded == 1 && !delay"
+                ng-class="comment.hide?'hidden':''"
+                ng-click="comment.hide = !comment.hide"
+                ng-style="{'padding-left':comment.level*15+'px'}">
+        <p class="timestamp">{{comment.time | timeAgo}}</p>
+        <p class="author">{{comment.by}} <i class="icon ion-arrow-down-b"></i></p>
+        <div class="text" ng-bind-html="trust(comment.text)" ng-click="bubbleCheck($event)"></div>
+      </ion-item>
+      <div class="spinner ng-hide" ng-show="percentLoaded != 1 && !timesUp && !starting" ng-style="{'top':getHalfHeight()+'px'}">
+        <i class="icon ion-loading-d energized"></i>
+      </div>
+      <ion-item class="padding text-center" ng-if="timesUp && comments.length < 1" >
+        <h3>Unable to Load Comments</h3>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

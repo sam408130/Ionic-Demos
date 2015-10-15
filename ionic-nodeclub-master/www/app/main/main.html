@@ -1,0 +1,32 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon button-clear ion-navicon"
+              menu-toggle="left">
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+
+  <ion-side-menu-content>
+    <ion-nav-view name="mainContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left"
+                 class="menu-dark">
+    <ion-content>
+      <div class="list">
+        <div class="item item-divider">板块列表</div>
+        <div class="item"
+             nav-clear
+             ng-repeat="tab in ::tabs"
+             ui-sref-active="active positive"
+             ui-sref="app.topics({tab:tab.value})"
+             menu-close>
+          {{::tab.label}}
+        </div>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>

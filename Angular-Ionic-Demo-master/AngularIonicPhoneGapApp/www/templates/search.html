@@ -1,0 +1,41 @@
+<ion-view view-title="Angular Services">
+  <ion-content class="itemSpacing">
+    <h1>Using angular services to create utility arithmetic methods and perform arithmetic operations </h1>
+      </br></br>
+      <div class="list">
+<h3>Perform Arithmetic Operation.      Select <select  ng-model="data.operation">
+          <option value="+" selected >Add</option>
+          <option value="-" >Subtract</option>
+          <option value="x" >Multiply</option>
+          <option value="/" >Divide</option>
+      </select></h3>
+          <div class="item item-input-inset">
+              <label class="item-input-wrapper itemSpacing">
+                  <input ng-model="data.numOne" type="number" placeholder="0">
+              </label>
+              <h2>{{ data.operation }} </h2>
+              <label class="item-input-wrapper itemSpacing">
+                  <input ng-model="data.numTwo" type="number" placeholder="0">
+              </label>
+              <button  class="button button-small itemSpacing" ng-click="performArithmeticOperation()">
+                  Compute
+              </button>
+               =
+              <label  class="item-input-wrapper itemSpacing">
+                  <input ng-model="resultNum" type="number" placeholder="000">
+              </label>
+          </div>
+
+      </div>
+      <h1>Global Variable: {{ AppCount }}</h1>
+      <button class="button button-balanced" ng-click="HelloCall()">
+          Pulls data from Restful Service
+      </button>
+      <!--<p> COUNT is {{ count }}</p>-->
+      <p>Dynamic content froom Http Request:  {{greeting.content}}         <br>Content ID : {{greeting.id}}</p>
+
+      <!--<button class="button button-assertive" ng-click="DecrementCount()">-->
+          <!--Decrement Count-->
+      <!--</button>-->
+  </ion-content>
+</ion-view>

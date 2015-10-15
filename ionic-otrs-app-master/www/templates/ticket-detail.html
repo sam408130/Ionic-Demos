@@ -1,0 +1,31 @@
+<ion-view title="{{ticket.title}}">
+  <ion-content padding="true">
+    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/tickets">返回列表</a>
+    </p>
+    <div class="item item-icon-left">录入时间
+      <span class="item-note">{{ ticket.created }}</span>
+    </div>
+    <div class="item item-icon-left">概要
+      <span class="item-note">{{ ticket.title }}</span>
+    </div>
+    <div class="item item-icon-left">状态
+      <span class="item-note">{{ ticket.status }}</span>
+    </div>
+    <div class="item item-icon-left">负责部门
+      <span class="item-note">{{ ticket.queue }}</span>
+    </div>
+    <ion-list show-reorder="true" class="item-text-wrap">
+      <ion-item ng-repeat="article in ticket.articles" type="item-text-wrap">
+        <h3>{{$index+1}}.&nbsp;{{article.Created.Text}}&nbsp;{{article.FromRealname.Text}}&nbsp;{{article.Subject.Text}}</h3>
+        <div class="item item-button-right">
+          {{article.Body.Text}}
+          <button class="button button-light button-clear" ng-click="andArticle(article)">
+            投诉
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+    <p><a class="button button-small icon ion-arrow-left-b" href="#/tab/tickets">返回列表</a>
+    </p>
+  </ion-content>
+</ion-view>

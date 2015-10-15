@@ -1,0 +1,31 @@
+[
+    {
+        "id": "01",
+        "title": "New Year in Mexico",
+        "eventType": "special-event",
+        "description": "Celebrate with us! Longer text, longer text!",
+        "start": "2014-12-2",
+        "end": "2014-12-04"
+    }, {
+        "id": "02",
+        "title": "New Year in Bulgaria",
+        "eventType": "normal-event",
+        "description": "Best offers!",
+        "start": "2014-12-2",
+        "end": "2014-12-04"
+    }, {
+        "id": "03",
+        "title": "Title 3",
+        "eventType": "normal-event",
+        "description": "This is event description",
+        "start": "2014-12-5",
+        "end": "2014-12-04"
+    }, {
+        "id": "04",
+        "title": "Christmas!",
+        "eventType": "special-event",
+        "description": "Woohoo!",
+        "start": "2014-12-25",
+        "end": "2014-12-04"
+    }
+]

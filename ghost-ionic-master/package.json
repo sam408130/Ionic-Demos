@@ -1,0 +1,25 @@
+{
+  "name": "ghost-mobile",
+  "version": "0.1.0",
+  "description": "ghost-mobile: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^0.7.1",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "org.apache.cordova.splashscreen",
+    "org.apache.cordova.statusbar",
+    "org.apache.cordova.device",
+    "com.ionic.keyboard",
+    "com.brodysoft.sqlitePlugin",
+    "nl.x-services.plugins.toast"
+  ]
+}

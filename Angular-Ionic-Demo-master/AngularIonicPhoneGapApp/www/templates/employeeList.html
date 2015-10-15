@@ -1,0 +1,32 @@
+<ion-view view-title="Employee List">
+    <!--<ion-header-bar align-title="left"  class="bar-subheader bar-positive">-->
+
+        <!--<h1 class="title"></h1>-->
+        <!--<div class="buttons">-->
+            <!--<button ng-click="onEdit()" ng-class="{'button-assertive': !isEdit, 'button-balanced': isEdit}" class="button ">{{ editBtnTxt }}</button>-->
+        <!--</div>-->
+    <!--</ion-header-bar>-->
+    <div class="bar bar-subheader item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios7-search placeholder-icon"></i>
+            <input id="searchKey" type="search" placeholder="Search" ng-model="searchKey" autocorrect="off" >
+            <!--<button class="button button-clear inputCross item-thumbnail-right" ng-click="clearSearch()">X</button>-->
+        </label>
+        <button class="button button-clear" ng-click="search()">Clear</button>
+    </div>
+    <ion-content has-header="true">
+        <div class="list listTopMargin">
+
+            <a ng-repeat="item in employees | filter:filterEmployeesByName"
+               href="#/{{item.id}}"
+               class="item item-thumbnail-left">
+
+                <img ng-src="img/{{ item.pic }}">
+                <h2>{{ item.firstName }}</h2>
+                <h4>{{ item.title }}</h4>
+            </a>
+
+        </div>
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-view view-title="设置">
+  <ion-content>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">API服务器</span>
+          <input type="text" placeholder="{{placeholder.api_server}}" ng-model="data.api_server">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">ES服务器 URL</span>
+          <input type="text" placeholder="{{placeholder.es_server}}" ng-model="data.es_server">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">ES Index</span>
+          <input type="text" placeholder="{{placeholder.es_index}}" ng-model="data.es_index">
+        </label>
+      <button type="submit" class="button button-positive button-block" ng-click="setting()">确定</button>
+  </ion-content>
+</ion-view>

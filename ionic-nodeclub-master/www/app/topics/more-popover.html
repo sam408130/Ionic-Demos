@@ -1,0 +1,26 @@
+<ion-popover-view>
+  <ion-content>
+    <div class="list" ng-click="morePopover.hide()">
+      <a class="item" ng-if="!me"
+                      ng-click="auth.login()">
+        登录
+      </a>
+      <a class="item" ui-sref="app.settings">
+        设置
+      </a>
+      <a class="item" external-link="http://fir.im/ionic">
+        关于
+      </a>
+      <a class="item" ng-click="switchNodeclub()">
+        切换API
+      </a>
+      <a class="item" external-link="https://github.com/zhenkunou/ionic-nodeclub/issues">
+        帮助 & 反馈
+      </a>
+      <a class="item" ng-if="me"
+                      ng-click="auth.logout()">
+        注销
+      </a>
+    </div>
+  </ion-content>
+</ion-popover-view>

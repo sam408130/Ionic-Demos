@@ -1,0 +1,84 @@
+<ion-view>
+  <ion-nav-title on-hold="doRefresh()">回复</ion-nav-title>
+  <ion-nav-buttons side="right">
+    <button class="button header-replies-button"
+            ng-click="scrollDelegate.scrollBottom(true)"
+            on-hold="doRefresh()"
+            ng-if="latestReplies">
+      {{latestReplies.length}}回复
+    </button>
+  </ion-nav-buttons>
+  <ion-content delegate-handle="replies-handle"
+               overflow-scroll="true">
+    <!--<ion-refresher on-refresh="doRefresh()">-->
+    <!--</ion-refresher>-->
+
+    <!-- 提示信息 -->
+    <div class="text-center padding"
+         ng-if="loading">
+      <ion-spinner></ion-spinner>
+      <p>加载中...</p>
+    </div>
+    <div class="padding text-center"
+         ng-if="error">
+      囧，出错啦...
+    </div>
+
+    <!-- 回复列表 -->
+    <div class="list" ng-if="topic">
+      <!-- 主题名 -->
+      <div class="item item-divider item-text-wrap">
+        <a ui-sref="app.topic({topicId: topic.id})"
+           class="button-link dark">{{::topic.title}}</a>
+      </div>
+      <div class="item"
+           ng-if="!latestReplies.length && !loading && !error">
+        暂无回复
+      </div>
+
+      <!-- 最赞回复 Top ? -->
+      <div ng-if="popReplies.length"
+           class="item item-divider assertive">
+        最赞回复
+        <span class="item-note"
+              ng-if="popReplies.length > config.POP_REPLIES_LIMIT">
+          top {{::config.POP_REPLIES_LIMIT}}
+        </span>
+      </div>
+      <reply-tile ng-repeat="reply in popReplies |limitTo:config.POP_REPLIES_LIMIT track by reply.id">
+      </reply-tile>
+
+      <!-- 最新回复 -->
+      <div ng-if="latestReplies.length"
+           class="item item-divider positive">最新回复</div>
+      <reply-tile ng-repeat="reply in latestReplies |limitTo:nLatest track by reply.id">
+      </reply-tile>
+
+      <!-- 一个显示全部回复的按钮 -->
+      <div class="item"
+           ng-if="nLatest < latestReplies.length">
+        <button class="button button-small button-block button-stable"
+                ng-click="displayMore()">
+          显示更多 ({{latestReplies.length - nLatest}})
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+
+  <!-- 新回复输入框 -->
+  <elastic-footer>
+    <label class="new-reply item-input-wrapper">
+      <textarea msd-elastic
+                focus-on="focus.newReplyInput"
+                ng-model="newReply.content"
+                ng-change="!newReply.content&&clearNewReply()"
+                placeholder="添加回复">
+      </textarea>
+    </label>
+    <button class="button button-link reply-button"
+            ng-disabled="!newReply.content"
+            ng-click="sendReply()"
+            on-hold="showSendAction()">发送</button>
+  </elastic-footer>
+</ion-view>

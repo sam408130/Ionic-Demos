@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<title></title>
+
+		<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+		<!-- ionic/angularjs js -->
+		<script src="lib/ionic/js/ionic.bundle.js"></script>
+
+		<!-- cordova script (this will be a 404 during development) -->
+		<script src="cordova.js"></script>
+
+		<!-- your app's js -->
+		<script src="js/app.js"></script>
+	</head>
+
+	<body ng-app="ionicApp">
+		<ion-view ng-controller="MainCtrl">
+
+			<div class="bar bar-header bar-positive">
+				<h1 class="title">Header</h1>
+			</div>
+
+			<ion-content class="has-header">
+				<div class="card">
+					<div class="item item-divider">
+						Fullscreen images + Slide Box
+					</div>
+					<div class="item item-text-wrap">
+						<div class="button-bar">
+							<a class="button" ng-click="openModal()">Show images from start</a>
+						</div>
+					</div>
+					<div class="item item-text-wrap">
+						<div class="button-bar">
+							<a class="button" ng-click="goToSlide(1)">Show second imagen</a>
+							<a class="button" ng-click="goToSlide(2)">Show third imagen</a>
+						</div>
+					</div>
+				</div>
+
+				<script id="image-modal.html" type="text/ng-template">
+					<div class="modal image-modal transparent" ng-click="closeModal()">
+						<ion-slide-box on-slide-changed="slideChanged(index)" show-pager="false">
+							<ion-slide ng-repeat="oImage in aImages">
+								<img ng-src="{{oImage.src}}" class="fullscreen-image" />
+								<p class="info">{{oImage.msg}}</p>
+							</ion-slide>
+						</ion-slide-box>
+					</div>
+				</script>
+
+			</ion-content>
+
+			<div class="bar bar-footer bar-balanced">
+				<div class="title">Footer</div>
+			</div>
+
+		</ion-view>
+	</body>
+
+</html>

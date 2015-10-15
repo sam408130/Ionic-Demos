@@ -1,0 +1,36 @@
+{
+  "name": "ionic-nodeclub",
+  "private": true,
+  "dependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0",
+    "restangular": "~1.5.1",
+    "angular-moment": "~0.9.2",
+    "angular-elastic": "~2.4.2",
+    "to-markdown": "~0.0.3",
+    "angular-markdown-directive": "~0.3.1",
+    "ngCordova": "~0.1.14-alpha"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "angular": {
+      "ignore": true
+    },
+    "angular-animate": {
+      "ignore": true
+    },
+    "angular-sanitize": {
+      "ignore": true
+    },
+    "angular-ui-router": {
+      "ignore": true
+    },
+    "ionic": {
+      "ignore": true
+    },
+    "moment": {
+      "main": [
+        "min/moment-with-locales.js"
+      ]
+    }
+  }
+}

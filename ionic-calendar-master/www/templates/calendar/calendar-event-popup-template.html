@@ -1,0 +1,18 @@
+<span class="bar bar-header bar-positive">Events</span>
+
+<div ng-controller="CalendarPopupController" class="event-container" ng-repeat="event in day.events track by $index">
+    <div ng-switch on="event.eventType">
+        <div ng-switch-when="special-event">
+            <span class="ion-heart"></span>
+            <span class="event-title">{{event.title}}</span>
+            <span class="event-date">{{event.start}}</span>
+            <span class="event-description" ng-click="sendEvent()">{{event.description}}</span>
+        </div>
+        <div ng-switch-when="normal-event">
+            <span class="ion-alert"></span>
+            <span class="event-title">{{event.title}}</span>
+            <span class="event-date">{{event.start}}</span>
+            <span class="event-description">{{event.description}}</span>
+        </div>
+    </div>
+</div>

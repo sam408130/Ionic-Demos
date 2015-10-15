@@ -1,0 +1,19 @@
+digraph G {
+	nodesep=0.5;
+        charset="UTF-8";
+        fixedsize=true;
+        node [style="rounded,filled", width=0, height=0, shape=box, fillcolor="#E5E5E5", concentrate=true]
+
+	"Web Create" -> Django -> Haystack -> ElasticSearch
+	subgraph cluster_1 {
+		"Ionic Create";
+		"Ionic Map";
+	}
+	subgraph cluster_2 {
+		Django;
+		"Django RESTful API";
+		Haystack;
+	}
+	"Ionic Create" -> "Django RESTful API" -> Haystack -> ElasticSearch
+	"Ionic Map"	-> ElasticSearch
+}

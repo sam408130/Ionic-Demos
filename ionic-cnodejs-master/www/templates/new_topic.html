@@ -1,0 +1,34 @@
+<div class="modal">
+
+	<ion-header-bar class="bar-balanced">
+		<div class="buttons">
+			<button class="button button-clear button-icon ion-checkmark-round" ng-click="newTopic()"></button>
+		</div>
+		<h1 class="title">发布话题</h1>
+		<div class="buttons">
+			<button side="left" class="button button-clear button-icon ion-close-round" ng-click="newTopicModal.hide()"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="new-topics" scroll="false">
+
+		<div class="button-bar bar-balanced bar-sm">
+			<a class="button" ng-class="topicParams.tab=='share' ? 'active' : null" ng-click="topicParams.tab='share'">分享</a>
+			<a class="button" ng-class="topicParams.tab=='ask' ? 'active' : null" ng-click="topicParams.tab='ask'">问答</a>
+			<a class="button" ng-class="topicParams.tab=='job' ? 'active' : null" ng-click="topicParams.tab='job'">招聘</a>
+		</div>
+
+		<div class="padding">
+			<div class="list">
+				<label class="item item-input">
+					<input type="text" placeholder="标题" ng-model="topicParams.title">
+				</label>
+				<label class="item item-input" data-tap-disabled="true">
+					<textarea rows="12" placeholder="说点啥..." ng-model="topicParams.content"></textarea>
+				</label>
+			</div>
+		</div>
+
+	</ion-content>
+
+</div>

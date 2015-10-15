@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title class="item-icon-right">
+        信息列表
+        <a href="#/tab/setting"><i class="icon icon-right ion-settings"></i></a>
+    </ion-nav-title>
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results">
+                <h4 class="icon-left">{{result.title}}</h4>
+                <p>简介: {{result.body}}</p>
+                <div class="icon-left ion-ios-home location_info">
+                    {{result.distance}} 公里 | {{result.location_info}}
+                </div>
+                <a ng-href="tel: {{result.phone_number}}" class="button button-calm button-outline icon-left ion-ios-telephone ">{{result.phone_number}}</a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

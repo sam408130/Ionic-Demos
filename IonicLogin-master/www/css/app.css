@@ -1,0 +1,313 @@
+/* Your app's CSS, go crazy, make it your own */
+
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+video{
+	height: 300px;
+	width: 300px;
+}
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: whiteSmoke;
+  transition: background-color .5s ease-in-out;
+}
+.clima{
+	font-size: 16px;
+}
+/* Light bulb ----------------------------------------------------------------*/
+.lightbulb {
+  transition: all .5s ease-in-out;
+	margin-top: 350px;
+}
+
+.lightbulb--is-on {
+  background-color: black;
+}
+
+
+/* Bulb ---------------------------------------------------------------------*/
+
+.lightbulb__bulb__1 {
+  position: absolute;
+  margin-top: -177px;
+  top: 50%;
+  left: 50%;
+  margin-left: -102.5px;
+  overflow: hidden;
+  width: 205px;
+  height: 204px;
+  border-radius: 50%;
+  background-color: #E1E1E1;
+  transition:
+    background-color .5s ease-in-out,
+    box-shadow .5s ease-in-out;
+  transition-delay: .2s;
+}
+
+.lightbulb--is-on .lightbulb__bulb__1 {
+  background-color: #FF0;
+  box-shadow: 0 0 800px 80px rgba(255,210,00,1);
+}
+
+.lightbulb__reflection {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50%;
+  height: 50%;
+  opacity: 0;
+  background:
+    radial-gradient(center center, 60% 60%, rgba(255, 255, 255, 1), rgba(255, 255, 0, 0)),
+    yellow;
+}
+
+.lightbulb--is-on .lightbulb__reflection {
+  opacity: 1;
+}
+
+.lightbulb__bulb__2 {
+  position: absolute;
+  margin-top: -40px;
+  top: 50%;
+  margin-left: -53.5px;
+  left: 50%;
+  width: 107px;
+  height: 154px;
+  background-color: #E1E1E1;
+  border-radius: 20%;
+  transition:
+    background-color .5s ease-in-out,
+    box-shadow .5s ease-in-out;
+  transition-delay: .2s;
+}
+
+.lightbulb--is-on .lightbulb__bulb__2 {
+  background-color: #FF0;
+}
+
+.lightbulb__bulb__3 {
+  position: absolute;
+  margin-top: -21px;
+  top: 50%;
+  margin-left: -87.5px;
+  left: 50%;
+  width: 105px;
+  height: 0;
+  border-left: 35px solid rgba(0, 0, 0, 0);
+  border-right: 35px solid rgba(0, 0, 0, 0);
+  border-top: 55px solid #E1E1E1;
+  transition:
+    border .5s ease-in-out,
+    box-shadow .5s ease-in-out;
+  transition-delay: .2s;
+}
+
+.lightbulb--is-on .lightbulb__bulb__3 {
+  border-top: 55px solid yellow;
+}
+
+.lightbulb__bulb__4 {
+  position: absolute;
+  margin-top: -6px;
+  top: 50%;
+  margin-left: -78.5px;
+  left: 50%;
+  width: 87px;
+  height: 0;
+  border-left: 35px solid rgba(0, 0, 0, 0);
+  border-right: 35px solid rgba(0, 0, 0, 0);
+  border-top: 115px solid #E1E1E1;
+  transition:
+    border .5s ease-in-out,
+    box-shadow .5s ease-in-out;
+  transition-delay: .2s;
+}
+
+.lightbulb--is-on .lightbulb__bulb__4 {
+  border-top: 115px solid #FF0;
+}
+
+.lightbulb__bulb__5 {
+  position: absolute;
+  margin-top: -11px;
+  top: 50%;
+  left: 50%;
+  margin-left: -80px;
+  width: 90px;
+  height: 0;
+  border-left: 35px solid rgba(0, 0, 0, 0);
+  border-right: 35px solid rgba(0, 0, 0, 0);
+  border-top: 97px solid #E1E1E1;
+  transition:
+    border .5s ease-in-out,
+    box-shadow .5s ease-in-out;
+  transition-delay: .2s;
+}
+
+.lightbulb--is-on .lightbulb__bulb__5 {
+  border-top: 97px solid yellow;
+}
+
+
+/* Base-----------------------------------------------------------------------*/
+
+.lightbulb__base__1 {
+  width: 85px;
+  margin-top: 97px;
+  top: 50%;
+  left: 50%;
+  margin-left: -57.5px;
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-top: 14px solid rgb(180, 180, 180);
+  position: absolute;
+}
+
+.lightbulb__base__2 {
+  width: 85px;
+  height: 56px;
+  top: 50%;
+  margin-top: 110px;
+  left: 50%;
+  margin-left: -42.5px;
+  background-color: rgb(180, 180, 180);
+  position: absolute;
+}
+
+.lightbulb__base__3 {
+  position: absolute;
+  top: 50%;
+  margin-top: 166px;
+  left: 50%;
+  margin-left: -42.5px;
+  width: 55px;
+  height: 0;
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  border-top: 13px solid rgb(180, 180, 180);
+}
+
+.lightbulb__base__4 {
+  position: absolute;
+  top: 50%;
+  margin-top: 179px;
+  left: 50%;
+  margin-left: -27.5px;
+  width: 25px;
+  height: 0;
+  border-right: 15px solid rgba(0, 0, 0, 0);
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  border-top: 10px solid rgb(70, 70, 70);
+}
+
+.lightbulb__base__screw-1 {
+  width: 93px;
+  position: absolute;
+  margin-top: 152px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46.5px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(165, 165, 165);
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: -moz-rotate(-3deg);
+}
+
+.lightbulb__base__screw-2 {
+  width: 93px;
+  position: absolute;
+  margin-top: 132px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46.5px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(165, 165, 165);
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: -moz-rotate(-3deg);
+}
+
+.lightbulb__base__screw-3 {
+  width: 93px;
+  position: absolute;
+  margin-top: 112px;
+  top: 50%;
+  left: 50%;
+  margin-left: -46.5px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(165, 165, 165);
+  transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: -moz-rotate(-3deg);
+}
+
+
+/* Modal ---------------------------------------------------------------------*/
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modal--is-visible {
+  display: block;
+}
+
+.modal__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  margin-top: -50px;
+  margin-left: -165px;
+  padding: 30px;
+  width: 270px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: whiteSmoke;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: #333;
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  font-family:
+    "HelveticaNeue-Light",
+    "Helvetica Neue Light",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    "Lucida Grande",
+    sans-serif;
+}

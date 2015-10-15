@@ -1,0 +1,52 @@
+<ion-view title="{{pageTitle}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-checkmark" ng-click="saveDateRecord()"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+
+        <div class="list">
+            <label class="item item-input" style="padding-right: 26px;">
+                <span class="input-label">名称</span>
+                <input ng-model="newRecord.title" type="text" class="text-right">
+            </label>
+            <label class="item item-input" style="padding-right: 26px;">
+                <span class="input-label">日期</span>
+                <input ng-model="newRecord.date" type="date" class="text-right">
+            </label>
+            <label class="item item-input item-select">
+                <span class="input-label">分类</span>
+                <select ng-model="newRecord.categoryId" ng-options="category.id as category.title for category in categories">
+                    <option value="">未分类</option>
+                </select>
+            </label>
+            <label class="item item-input item-toggle">
+                <!--<ion-toggle ng-model="tempAlarm" toggle-class="toggle-calm" ng-click="checkAlarmClick()">提醒</ion-toggle>-->
+                <span class="input-label">提醒</span>
+                <label class="toggle">
+                    <input type="checkbox" ng-checked="newRecord.alarm" ng-click="checkAlarmClick($event)">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </label>
+            <label ng-show="newRecord.alarm" class="item item-input" style="padding-right: 26px;">
+                <span class="input-label">提醒时间</span>
+                <input ng-model="newRecord.alarmTime" type="time" class="text-right">
+            </label>
+            <label ng-show="newRecord.alarm" class="item item-input item-select">
+                <span class="input-label">重复</span>
+                <select ng-model="newRecord.repeat" ng-options="setting.id as setting.title for setting in repeatSetting"></select>
+            </label>
+
+        </div>
+        <button ng-hide="isAddingRecord" class="button button-full button-assertive" ng-click="deleteDateRecord()">
+           删除该纪录
+        </button>
+        <!--<button class="button button-full button-assertive" ng-click="testClick()">-->
+           <!--测试-->
+        <!--</button>-->
+        <!--<button class="button button-full button-assertive" ng-click="cancelAll()">-->
+           <!--取消所有-->
+        <!--</button>-->
+    </ion-content>
+</ion-view>

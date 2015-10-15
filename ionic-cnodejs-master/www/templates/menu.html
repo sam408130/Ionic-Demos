@@ -1,0 +1,68 @@
+<ion-side-menus>
+
+	<ion-pane ion-side-menu-content>
+		<ion-nav-bar class="bar bar-header bar-balanced">
+			<ion-nav-back-button class="button-clear">
+				<button class="button button-icon icon ion-ios7-arrow-back"></button>
+			</ion-nav-back-button>
+		</ion-nav-bar>
+		<ion-nav-view name="content" animation="slide-left-right"></ion-nav-view>
+	</ion-pane>
+
+	<ion-side-menu side="left">
+		<header class="bar bar-header bar-menu">
+			<h1 class="title"><strong>设置</strong></h1>
+		</header>
+		<ion-content class="has-header">
+			<div class="list">
+
+				<div ng-if="accessToken==null">
+					<a nav-clear menu-close class="item" ng-click="loginModal.show()">登录</a>
+				</div>
+
+				<div ng-if="accessToken!=null">
+					<a nav-clear class="item" ng-click="quit()">退出</a>
+					<a nav-clear menu-close class="item" ng-click="newTopicModal.show()">发布话题</a>
+				</div>
+
+				<div class="item item-divider">列表头像</div>
+				<div class="item item-toggle">
+					显示
+					<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-model="setting.avatar.enabled" ng-change="settingAvatar()">
+						<span class="track"><em class="handle"></em></span>
+					</label>
+				</div>
+				<div class="item item-toggle">
+					高清
+					<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-model="setting.avatar.hd" ng-change="settingAvatar()">
+						<span class="track"><em class="handle"></em></span>
+					</label>
+				</div>
+
+				<div class="item item-divider">话题详情</div>
+				<div class="item item-toggle">
+					显示图片
+					<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-model="setting.image.enabled" ng-change="settingImage()">
+						<span class="track"><em class="handle"></em></span>
+					</label>
+				</div>
+				<div class="item item-toggle">
+					高清/原图
+					<label class="toggle toggle-balanced">
+						<input type="checkbox" ng-model="setting.image.hd" ng-change="settingImage()">
+						<span class="track"><em class="handle"></em></span>
+					</label>
+				</div>
+
+
+				<div class="item item-divider">杂项</div>
+				<a nav-clear class="item" ng-click="settingTail()">修改小尾巴</a>
+
+			</div>
+		</ion-content>
+	</ion-side-menu>
+
+</ion-side-menus>

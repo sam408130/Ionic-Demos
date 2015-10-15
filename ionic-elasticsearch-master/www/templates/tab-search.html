@@ -1,0 +1,22 @@
+<ion-view view-title="搜索" ng-controller="SearchCtrl">
+    <ion-content>
+        <div id="search-bar">
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper" id="search-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="search" placeholder="Search" ng-model="query" ng-change="search(query)" autocorrect="off">
+                </label>
+            </div>
+        </div>
+        <ion-list>
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results">
+                <h2 class="icon-left">{{result.title}}</h2>
+                <p>简介: {{result.body}}</p>
+                <div class="icon-left ion-ios-home location_info">
+                    {{result.location_info}}
+                </div>
+                <a ng-href="tel: {{result.phone_number}}" class="button button-calm button-outline icon-left ion-ios-telephone ">{{result.phone_number}}</a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

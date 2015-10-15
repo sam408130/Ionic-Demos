@@ -1,0 +1,50 @@
+<ion-view view-title="{{selectedTab | tabLabel}}">
+  <ion-nav-buttons side="right">
+    <!-- 登录按钮 -->
+    <span ng-if="!me">
+      <button class="button button-icon icon icon-person"
+              ng-click="auth.login()"></button>
+    </span>
+    <!-- 显示已登录用户信息 -->
+    <span ng-if="me">
+      <a class="button button-icon icon header-avatar-button"
+         ng-class="{'unread-message-dot':msg.getUnreadCount() > 0}"
+         ui-sref="app.user({loginname:me.loginname})">
+        <img class="avatar"
+             alt="{{::me.loginname}}"
+             ng-src="{{::me.avatar_url | prefixUrl}}">
+      </a>
+    </span>
+    <button class="button button-icon icon icon-more"
+            ng-click="morePopover.show($event)"></button>
+  </ion-nav-buttons>
+  <!-- TODO overflow-scroll="true" -->
+  <ion-content delegate-handle="topics-handle">
+    <!-- 下拉刷新 -->
+    <ion-refresher on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <!-- 主题列表，user页面也会用到 -->
+    <topics-list topics="topics" selected-tab='selectedTab'></topics-list>
+
+    <!-- 滚动加载更多 -->
+    <ion-infinite-scroll on-infinite="loadMore()"
+                         ng-if="hasMore && !error"
+                         distance="10%">
+    </ion-infinite-scroll>
+
+    <!-- 提示信息 -->
+    <div class="padding text-center"
+         ng-if="!loading && !hasMore && topics.length">
+      没有了...
+    </div>
+    <div class="padding text-center"
+         ng-if="!loading && error">
+      囧，出错啦...
+    </div>
+  </ion-content>
+
+  <!-- 创建新主题按钮 -->
+  <button class="button-float button button-assertive icon icon-new-topic"
+          ng-click="createNewTopic()"></button>
+</ion-view>

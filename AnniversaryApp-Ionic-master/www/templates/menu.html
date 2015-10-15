@@ -1,0 +1,52 @@
+<ion-side-menus>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> 返回</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+      <div class="bar bar-header bar-calm">
+          <button class="button button-icon icon ion-ios7-gear" ng-click="settingClick()"></button>
+          <div class="h1 title">类别</div>
+      </div>
+    <ion-content class="has-header">
+      <ion-list>
+          <ion-item nav-clear menu-close href="#/app/recordlists/0" ng-click="categoryClick('全部')">
+              <span>全部</span>
+              <span style="position: absolute;right: 16px;">{{dateRecords.length}}</span>
+          </ion-item>
+          <ion-item nav-clear menu-close ng-repeat="category in categories" href="#/app/recordlists/{{category.id}}" ng-click="categoryClick(category.title)">
+              <span>{{category.title}}</span>
+              <span style="background-color: {{categoryColorDict[category.id]}};width: 12px;height: 12px;display: inline-block;"></span>
+              <span style="position: absolute;right: 16px;">{{category.totalNumber}}</span>
+              <ion-option-button class="button-assertive"
+                                 ng-click="deleteCategoryClick(category)">
+                  删除
+              </ion-option-button>
+          </ion-item>
+          <ion-item ng-show="categorySetting.newCategoryEditing">
+            <input id="new-category-input" ng-model="newCategoryTitle" ng-focus="newCategoryTitle=''" ng-blur="newCategoryInputOnBlur(newCategoryTitle)" type="text" placeholder="类别" style="height: 20px;">
+          </ion-item>
+          <ion-item class="text-center" ng-click="addCategoryClick()"><i class="ion-plus calm"></i></ion-item>
+          <!--<ion-item nav-clear menu-close style="background-color: red;">-->
+              <!--<div>test</div>-->
+          <!--</ion-item>-->
+        <!--<ion-item nav-clear menu-close ng-click="login()">-->
+          <!--Login-->
+        <!--</ion-item>-->
+        <!--<ion-item nav-clear menu-close href="#/app/search">-->
+          <!--Search-->
+        <!--</ion-item>-->
+        <!--<ion-item nav-clear menu-close href="#/app/browse">-->
+          <!--Browse-->
+        <!--</ion-item>-->
+        <!--<ion-item nav-clear menu-close href="#/app/playlists">-->
+          <!--Playlists-->
+        <!--</ion-item>-->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

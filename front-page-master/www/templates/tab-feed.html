@@ -1,0 +1,32 @@
+<ion-view title="{{pageName}}">
+  <ion-content class="has-header" delegate-handle="mainScroll">
+    <ion-list>
+      <ion-item class="post-list"
+                collection-repeat="post in posts"
+                collection-item-width="'100%'"
+                collection-item-height="92"
+                ng-class="post.points > 0?'item-icon-right':''"
+                ng-show="post.title.length"
+                fp-share
+                ng-click="open(post.url)">
+
+        <a class="ion-chatbubble icon light"
+           ng-click="loadComments(post.id, post.kids.length, $event)"
+           ng-hide="post.type != 'story'">
+          {{post.kids.length || 0}}
+        </a>
+        <h2>{{post.title}}</h2>
+        <p>
+          <span ng-if="post.score">{{post.score}} points &nbsp;</span>
+          {{post.time | timeAgo}} &nbsp;
+          {{post.by}}
+        </p>
+      </ion-item>
+      <ion-item class="padding text-center" ng-if="!posts && timesUp">
+        <h3>Request Failed</h3>
+        <small>Check that you are online. If you are, the server may be offline.</small>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll ng-if="loadMore" on-infinite="loadMore()" distance="5%" icon=""></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
