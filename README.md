@@ -11,7 +11,7 @@
 上面近30个ionic demo是我在这两个月的学习中接触到得，其中Ionic-cnodejs , ioniclub , front-page需要重点看，入门极好的demo
 
 ###总结内容
-楼主本身对html , css ， js都不熟，以下是学习过程中总结的一些内容，如果你觉得太low, 请勿喷
+本身对html , css ， js都不熟，以下是学习过程中总结的一些内容，如果你觉得太low, 请勿喷
 
 
 网站部署
