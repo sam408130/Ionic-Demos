@@ -11,7 +11,7 @@
 上面近30个ionic demo是我在这两个月的学习中接触到得，其中Ionic-cnodejs , ioniclub , front-page需要重点看，入门极好的demo
 
 
-
+###以下是学习过程中得一些笔记
 
 网站部署
 -----
