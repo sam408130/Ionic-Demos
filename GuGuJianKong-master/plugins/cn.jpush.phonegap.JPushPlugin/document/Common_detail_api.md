@@ -1,4 +1,4 @@
-#通用API说明
+# 通用API说明
 
 
 ## 停止与恢复推送服务 API	
@@ -86,7 +86,7 @@ JPush SDK 会恢复正常的默认行为。（因为保存在本地的状态数�
 
 + callback 回调函数，用来通知JPush的推送服务是否开启
 
-####代码示例
+#### 代码示例
 	    window.plugins.jPushPlugin.resumePush(callback)
 		var onCallback = function(data) {
 		    if(data>0){
@@ -97,7 +97,7 @@ JPush SDK 会恢复正常的默认行为。（因为保存在本地的状态数�
 		}
 
 
-##获取 RegistrationID API
+## 获取 RegistrationID API
 
 ### API - getRegistrationID
 
@@ -128,7 +128,7 @@ RegistrationID 定义
 		}
 	}
 
-##别名与标签 API
+## 别名与标签 API
 
 ### API - setTagsWithAlias,setTags,setAlias
 
@@ -164,7 +164,7 @@ RegistrationID 定义
 	JPushPlugin.prototype.setTags = function(tags)
 	JPushPlugin.prototype.setAlias = function(alias)
 
-####使用平台
+#### 使用平台
 android iOS
 
 
@@ -202,7 +202,7 @@ android iOS
        }
    }
 
-####错误码定义
+#### 错误码定义
 
 
 
@@ -225,7 +225,7 @@ android iOS
 
 点击通知进入应用程序时会出发改事件
 
-#####代码示例
+##### 代码示例
 
 - 在你需要接收通知的的js文件中加入:
 	           
@@ -272,14 +272,14 @@ ps：点击通知后传递的json object 保存在window.plugins.jPushPlugin.rec
 
 ### 获取自定义消息推送内容
 
-####event - jpush.receiveMessage
+#### event - jpush.receiveMessage
 
 收到应用内消息时触发这个事件
 
 `推荐使用事件的方式传递，但同时保留了receiveMessageIniOSCallback的回调函数，兼容以前的代码`
 
 
-#####代码示例
+##### 代码示例
 
 - 在你需要接收通知的的js文件中加入:
 	           

@@ -1,17 +1,17 @@
 # Ionic-Demos
 
-###Ionic 
+### Ionic 
 
 [Ionic](http://ionicframework.com/) 的介绍请看官网, 还有[Ionichina](http://ionichina.com/)（一个Ionic中文论坛）
 
-###个人情况
+### 个人情况
 回想七月份一个月，那真是忙成狗，一个月的时间做出了一个app：[门客](http://itunes.apple.com/app/id1032920599?mt=8)（2.0版本已经提交审核啦！），8月份开始研究Hybrid开发，两个月的时间用IonicFramework做了两个应用，详情请关注微信：天天有活，里面有商家端和用工端，产品还比较丑陋，还会继续维护更新。
 
-###Ionic Demos
+### Ionic Demos
 上面近30个ionic demo是我在这两个月的学习中接触到得，其中Ionic-cnodejs , ioniclub , front-page需要重点看，入门极好的demo
 
 
-###以下是学习过程中得一些笔记
+### 以下是学习过程中得一些笔记
 
 网站部署
 -----

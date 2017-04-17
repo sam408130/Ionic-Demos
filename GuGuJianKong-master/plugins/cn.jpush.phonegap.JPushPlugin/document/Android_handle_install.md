@@ -1,4 +1,4 @@
-#Android 手工安装
+# Android 手工安装
 
 下载jpush phonegap插件，并解压缩，标记插件目录为：`$JPUSH_PLUGIN_DIR`
 
