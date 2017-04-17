@@ -8,7 +8,7 @@ $ cordova plugin add https://github.com/phonegap-build/PushPlugin.git
 Used through ng-cordova
 
 
-#Ionic App Base
+# Ionic App Base
 
 A starting project for Ionic that optionally supports
 using custom SCSS.

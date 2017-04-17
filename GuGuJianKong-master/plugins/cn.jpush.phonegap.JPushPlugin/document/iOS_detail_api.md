@@ -7,7 +7,7 @@
 当iOS收到的通知时会触发这个事件
 
 
-#####代码示例
+##### 代码示例
 
 - 在你需要接收通知的的js文件中加入:
 	           
@@ -37,13 +37,13 @@
 
 	JPushPlugin.prototype.receiveMessageIniOSCallback = function(data)
 
-#####参数说明
+##### 参数说明
 
 - data 	是一个js字符串使用如下代码解析，js具体key根据应用内消息来确定
 	
 		var bToObj = JSON.parse(data);
 		
-#####返回值
+##### 返回值
 无
 
 #####  代码示例
@@ -58,16 +58,16 @@
 	window.plugins.jPushPlugin.startLogPageView = function(pageName)
 	window.plugins.jPushPlugin.stopLogPageView = function(pageName)
 	window.plugins.jPushPlugin.beginLogPageView = function(pageName,duration)
-#####参数说明
+##### 参数说明
 pageName 需要统计页面自定义名称
 duration 自定义的页面时间
-#####调用说明
+##### 调用说明
 应在所有的需要统计得页面得 viewWillAppear 和 viewWillDisappear 加入 startLogPageView 和 stopLogPageView 来统计当前页面的停留时间。
 
 	或者直接使用 beginLogPageView 来自定义加入页面和时间信息。
-#####返回值说明
+##### 返回值说明
 无
-#####代码示例
+##### 代码示例
 
 	if(window.plugins.jPushPlugin.isPlatformIOS()){
 		window.plugins.jPushPlugin.beginLogPageView("newPage",5);
@@ -90,7 +90,7 @@ badge是iOS用来标记应用程序状态的一个数字，出现在程序图标
 value 取值范围：[0,99999]
 ##### 返回值
 无，控制台会有log打印设置结果
-#####代码示例
+##### 代码示例
 
 	if(window.plugins.jPushPlugin.isPlatformIOS()){
 		window.plugins.jPushPlugin.setBadge(5);
@@ -110,7 +110,7 @@ value 取值范围：[0,99999]
 - badge 整形,例如0，1，2
 - 当badge为0时，角标被清除
 
-#####代码示例
+##### 代码示例
 
 	if(window.plugins.jPushPlugin.isPlatformIOS()){
 		window.plugins.jPushPlugin.reSetBadge.setApplicationIconBadgeNumber(0);
@@ -128,7 +128,7 @@ API 用于开启Debug模式，显示更多的日志信息
 
 	window.plugins.jPushPlugin.reSetBadge.setDebugModeFromIos()
 	
-#####代码示例
+##### 代码示例
 
 	if(window.plugins.jPushPlugin.isPlatformIOS()){
 		window.plugins.jPushPlugin.setDebugModeFromIos();
@@ -144,7 +144,7 @@ API用来关闭日志信息（除了必要的错误信息）
 
 	window.plugins.jPushPlugin.reSetBadge.setLogOFF ()
 
-#####代码示例
+##### 代码示例
 
 	if(window.plugins.jPushPlugin.isPlatformIOS()){
 		window.plugins.jPushPlugin.setLogOFF();

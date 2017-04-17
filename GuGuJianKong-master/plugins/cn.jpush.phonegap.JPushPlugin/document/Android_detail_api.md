@@ -56,18 +56,18 @@
 
 
 
-####接口定义
+#### 接口定义
 
 		public static void onResume(final Activity activity)
 		public static void onPause(final Activity activity)
-####参数说明
+#### 参数说明
 
  ＋ Activity activity 当前所在的Activity。
-####调用说明
+#### 调用说明
 
 应在所有的 Activity 的 onResume / onPause 方法里调用。
 
-####代码示例
+#### 代码示例
 
 	@Override
 	protected void onResume() {
@@ -162,7 +162,7 @@
 
 三个接口的功能分别为：添加一个本地通知，删除一个本地通知，删除所有的本地通知
 
-#####接口定义
+##### 接口定义
 
 	window.plugins.jPushPlugin.addLocalNotification = function(builderId,
 											    content,

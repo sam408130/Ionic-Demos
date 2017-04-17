@@ -33,7 +33,7 @@ And the angular module as a dependency
 ```
 angular.module('ionicApp', ['ionic', 'ionMdInput'])
 ```
-##Demo
+## Demo
 
 Talk is cheap, where's the code...
 

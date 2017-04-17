@@ -1,4 +1,4 @@
-#Ionic ElasticSearch with OpenLayers 3
+# Ionic ElasticSearch with OpenLayers 3
 
 > A Demo of ElasticSearch, Django, Ionic
 
@@ -7,24 +7,24 @@
        src="https://developer.android.com/images/brand/zh-cn_generic_rgb_wo_60.png" />
 </a>
 
-##Tech
+## Tech
 
 - ElasticSearch
 - Django
 - Ionic
 - OpenLayers 3
 
-##Server
+## Server
  
 Visit: [https://github.com/phodal/django-elasticsearch](https://github.com/phodal/django-elasticsearch)
 
-##Screenshot
+## Screenshot
 
 ![Django Ionic ScreenShot](./screenshots/1.jpg)
 ![Django Ionic ScreenShot](./screenshots/2.jpg)
 
 
-##Document
+## Document
 
 [Django ElasticSearch Ionic 打造 GIS 移动应用 —— 架构设计](http://www.phodal.com/blog/django-elasticsearch-ionic-build-gis-application/)
 

@@ -22,7 +22,7 @@ Issues only! |
 -------------|
 Please keep in mind that the issue tracker is for *issues*. Please do *not* post an issue if you need help or support. Instead, see one of the above-mentioned forums or [IRC](irc://irc.freenode.net/#angularjs). |
 
-####Purple Labels
+#### Purple Labels
 A purple label means that **you** need to take some further action.  
  - ![Not Actionable - Need Info](http://angular-ui.github.io/ui-router/images/notactionable.png): Your issue is not specific enough, or there is no clear action that we can take. Please clarify and refine your issue.
  - ![Plunkr Please](http://angular-ui.github.io/ui-router/images/plunkrplease.png): Please [create a plunkr](http://bit.ly/UIR-Plunk)
